@@ -1,0 +1,6 @@
+[submodule "vendor/buttercut"]
+	path = vendor/buttercut
+	url = https://github.com/barefootford/buttercut.git
+[submodule "vendor/cutlass"]
+	path = vendor/cutlass
+	url = https://github.com/andrewarrow/cutlass.git
