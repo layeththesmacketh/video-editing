@@ -180,10 +180,10 @@ def test_broll_min_gap_enforced():
 
 
 def test_broll_coverage_cap():
-    # 30s timeline, place 20s of B-roll outside the hook (5–25) → 66%, fails.
+    # 30s timeline, place ~20s of B-roll outside the hook (5–25) → 66%, fails the 60% cap.
     broll = [
-        {"clip": "B.mov", "in": 0.0, "out": 9.0, "over_aroll_at": 6.0, "audio": False},
-        {"clip": "B.mov", "in": 0.0, "out": 9.0, "over_aroll_at": 16.0, "audio": False},
+        {"clip": "B.mov", "in": 0.0, "out": 10.0, "over_aroll_at": 5.0, "audio": False},
+        {"clip": "B.mov", "in": 0.0, "out": 10.0, "over_aroll_at": 15.5, "audio": False},
     ]
     res = validate_broll(broll, _aroll())
     assert not res["ok"]

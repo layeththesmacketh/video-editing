@@ -164,10 +164,13 @@ def build_timeline(
     return tl
 
 
+# Adapter names. FCPX (Final Cut Pro X) is shipped by the third-party
+# `otio-fcpx-xml-lite-adapter` package as `otio_fcpx_xml_lite_adapter`.
+# Premiere uses the FCP7-style `fcp_xml` adapter. EDL is `cmx_3600`.
 _ADAPTERS = {
-    "fcpxml": "fcpx_xml",   # Final Cut Pro X
-    "fcpx": "fcpx_xml",
-    "xml": "fcp_xml",        # Premiere / FCP7-style XML
+    "fcpxml": "otio_fcpx_xml_lite_adapter",
+    "fcpx": "otio_fcpx_xml_lite_adapter",
+    "xml": "fcp_xml",
     "premiere": "fcp_xml",
     "edl": "cmx_3600",
     "cmx": "cmx_3600",

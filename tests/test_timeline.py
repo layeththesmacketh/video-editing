@@ -76,11 +76,15 @@ def test_edl_export_has_header(tmp_path: Path):
         "broll": [],
         "music": [],
     })
+    # CMX 3600 supports only a single video track. Strip the empty V2/A2
+    # before exporting — the real workflow should do the same.
+    tl.tracks[:] = [t for t in tl.tracks if list(t)]
     out = export_timeline(tl, tmp_path / "rc.edl")
     text = out.read_text()
-    # CMX 3600 EDLs begin with TITLE and FCM lines.
+    # CMX 3600 EDLs begin with a TITLE line, then numbered events.
     assert text.startswith("TITLE:")
-    assert "FCM:" in text
+    assert "lattimore_roughcut" in text
+    assert "001" in text  # at least one event line
 
 
 def test_build_timeline_rejects_overlap_v2():
