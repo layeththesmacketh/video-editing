@@ -3,6 +3,8 @@
 Usage:
     python -m lattimore.cli build  <schema.json> <out.otio> [--name NAME]
     python -m lattimore.cli export <in.otio> <out.path> [--fmt fcpxml|xml|edl|otio]
+    python -m lattimore.cli ingest <interview> <broll_dir> <out_dir>
+                                   [--whisper-model small.en] [--vision-model ...]
 """
 
 from __future__ import annotations
@@ -49,8 +51,31 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--fmt", default=None)
     e.set_defaults(func=_export)
 
+    i = sub.add_parser("ingest")
+    i.add_argument("interview")
+    i.add_argument("broll_dir")
+    i.add_argument("out_dir")
+    i.add_argument("--whisper-model", default="small.en")
+    i.add_argument("--vision-model", default=None)
+    i.set_defaults(func=_ingest)
+
     args = ap.parse_args(argv)
     return args.func(args)
+
+
+def _ingest(args: argparse.Namespace) -> int:
+    from .ingest import ingest_library, DEFAULT_VISION_MODEL
+
+    res = ingest_library(
+        args.interview,
+        args.broll_dir,
+        args.out_dir,
+        whisper_model=args.whisper_model,
+        vision_model=args.vision_model or DEFAULT_VISION_MODEL,
+        progress=lambda m: print(f"[ingest] {m}", file=sys.stderr),
+    )
+    print(json.dumps(res))
+    return 0
 
 
 if __name__ == "__main__":

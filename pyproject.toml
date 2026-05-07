@@ -19,6 +19,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "ruff>=0.5"]
+ingest = [
+    # Heavy. Install only when you need to transcribe + vision-analyze locally.
+    "whisperx>=3.1",
+    "anthropic>=0.40",
+]
 
 [tool.setuptools.packages.find]
 where = ["lib"]

@@ -117,6 +117,44 @@ pytest
 OTIO's FCP/EDL/FCPX adapters install automatically as transitive deps
 (`opentimelineio-plugins` + `otio-fcpx-xml-lite-adapter`).
 
+## Running on real footage
+
+For a < 30-min interview + B-roll job, the lightest path is local ingest
+(no ButterCut required):
+
+```bash
+# One-time: install the heavy ingest deps (whisperx + anthropic SDK).
+pip install -e '.[ingest]'
+
+# Make sure ffmpeg is on PATH and ANTHROPIC_API_KEY is set for vision.
+ffmpeg -version
+export ANTHROPIC_API_KEY=sk-ant-...
+
+# Ingest: transcribes the interview, vision-analyzes every B-roll clip.
+python -m lattimore.cli ingest \
+    /path/to/interview.mov \
+    /path/to/broll/ \
+    ./work/
+
+# Produces:
+#   ./work/transcripts.json           — WhisperX-shaped, word-level timestamps
+#   ./work/footage_map.json           — {searchable-key: clip-path} for the matcher
+#   ./work/footage_annotations.json   — per-clip description + keywords (for review)
+```
+
+Then in Claude Code, run `/lattimore-roughcut` and point it at `./work/`.
+The orchestrator drives `interview-paper-edit` → `broll-overlay` →
+`compose_timeline` → `export_timeline` and produces `.fcpxml` + `.otio`.
+
+**WhisperX notes.** First run downloads a model (~500MB for `small.en`).
+CPU is fine for < 30 min footage (≈ 5–10 min runtime). For longer or
+batch jobs, use a GPU box and pass `--whisper-model medium.en`.
+
+**Vision-analysis cost.** Each B-roll clip costs one Haiku 4.5 vision call
+on three sampled frames. For a typical shoot (~50 clips) that's pennies.
+The default model is `claude-haiku-4-5-20251001`; override with
+`--vision-model` if you want richer descriptions.
+
 ## Companion MCPs (recommended, independent installs)
 
 These are **not** vendored. Install separately as needed:
