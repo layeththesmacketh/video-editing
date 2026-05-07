@@ -59,8 +59,23 @@ def _range(start: float, duration: float, rate: float) -> otio.opentime.TimeRang
     return otio.opentime.TimeRange(start_time=_rt(start, rate), duration=_rt(duration, rate))
 
 
-def _media_ref(clip_path: str) -> otio.schema.ExternalReference:
-    return otio.schema.ExternalReference(target_url=Path(clip_path).as_uri() if not clip_path.startswith("file://") else clip_path)
+def _media_ref(
+    clip_path: str,
+    src_out: float,
+    rate: float,
+    *,
+    headroom: float = 60.0,
+) -> otio.schema.ExternalReference:
+    """ExternalReference with a populated `available_range`.
+
+    The FCP7 / Premiere XML adapter requires `available_range` on every
+    media reference. We don't know the actual source duration here, so we
+    declare a range from 0 to `src_out + headroom` — enough to cover the
+    span we're using plus slack for trim handles in the NLE.
+    """
+    url = clip_path if clip_path.startswith("file://") else Path(clip_path).as_uri()
+    available = _range(0.0, max(src_out + headroom, headroom), rate)
+    return otio.schema.ExternalReference(target_url=url, available_range=available)
 
 
 def build_timeline(
@@ -92,12 +107,12 @@ def build_timeline(
             raise ValueError(f"non-positive A-roll duration: {sel}")
         clip_v = otio.schema.Clip(
             name=Path(sel["clip"]).stem,
-            media_reference=_media_ref(sel["clip"]),
+            media_reference=_media_ref(sel["clip"], src_out, rate),
             source_range=_range(src_in, dur, rate),
         )
         clip_a = otio.schema.Clip(
             name=Path(sel["clip"]).stem + "_dialog",
-            media_reference=_media_ref(sel["clip"]),
+            media_reference=_media_ref(sel["clip"], src_out, rate),
             source_range=_range(src_in, dur, rate),
         )
         v1.append(clip_v)
@@ -125,7 +140,7 @@ def build_timeline(
         v2.append(
             otio.schema.Clip(
                 name=Path(lay["clip"]).stem,
-                media_reference=_media_ref(lay["clip"]),
+                media_reference=_media_ref(lay["clip"], src_out, rate),
                 source_range=_range(src_in, dur, rate),
                 metadata={"lattimore": {"audio": bool(lay.get("audio", False))}},
             )
@@ -145,7 +160,7 @@ def build_timeline(
         a2.append(
             otio.schema.Clip(
                 name=Path(m["clip"]).stem,
-                media_reference=_media_ref(m["clip"]),
+                media_reference=_media_ref(m["clip"], dur, rate),
                 source_range=_range(0.0, dur, rate),
             )
         )

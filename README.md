@@ -110,9 +110,12 @@ git submodule update --init --recursive
 ## Python
 
 ```bash
-pip install -e .
+pip install -e '.[dev]'
 pytest
 ```
+
+OTIO's FCP/EDL/FCPX adapters install automatically as transitive deps
+(`opentimelineio-plugins` + `otio-fcpx-xml-lite-adapter`).
 
 ## Companion MCPs (recommended, independent installs)
 

@@ -12,6 +12,8 @@ license = { text = "MIT" }
 authors = [{ name = "Nick Lattimore" }]
 dependencies = [
     "opentimelineio>=0.17",
+    "opentimelineio-plugins>=0.17",
+    "otio-fcpx-xml-lite-adapter>=0.2",
     "PyYAML>=6.0",
 ]
 

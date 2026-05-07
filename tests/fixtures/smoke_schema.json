@@ -1,0 +1,13 @@
+{
+  "_comment": "Smoke fixture for the full pipeline. Two A-roll selects (hook + resolve), one B-roll lay-over outside the hook, one music bed.",
+  "aroll": [
+    {"clip": "/fixtures/INT_001.mov", "in": 1.0,  "out": 5.0},
+    {"clip": "/fixtures/INT_001.mov", "in": 12.0, "out": 18.0}
+  ],
+  "broll": [
+    {"clip": "/fixtures/BR_walk.mov", "in": 0.0, "out": 2.0, "over_aroll_at": 6.0, "audio": false}
+  ],
+  "music": [
+    {"clip": "/fixtures/MUS_bed.wav", "in": 0.0, "duration": 10.0}
+  ]
+}
