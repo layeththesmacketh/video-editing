@@ -5,6 +5,8 @@ Usage:
     python -m lattimore.cli export <in.otio> <out.path> [--fmt fcpxml|xml|edl|otio]
     python -m lattimore.cli ingest <interview> <broll_dir> <out_dir>
                                    [--whisper-model small.en] [--vision-model ...]
+    python -m lattimore.cli cutdown <interview> <out_dir>
+                                   [--speakers andrei,tawny] [--target-min 15] [--target-max 120]
 """
 
 from __future__ import annotations
@@ -16,7 +18,7 @@ from pathlib import Path
 
 import opentimelineio as otio
 
-from .timeline import build_timeline, export_timeline
+from .timeline import build_cutdown_timeline, build_timeline, export_timeline
 
 
 def _build(args: argparse.Namespace) -> int:
@@ -59,8 +61,101 @@ def main(argv: list[str] | None = None) -> int:
     i.add_argument("--vision-model", default=None)
     i.set_defaults(func=_ingest)
 
+    c = sub.add_parser("cutdown",
+                       help="transcribe + find soundbites + emit FCPXML "
+                            "(V1=full master, V2=soundbites lifted)")
+    c.add_argument("interview")
+    c.add_argument("out_dir")
+    c.add_argument("--whisper-model", default="small.en")
+    c.add_argument("--soundbite-model", default=None,
+                   help="Anthropic model id (default: claude-sonnet-4-6)")
+    c.add_argument("--speakers", default="andrei,tawny",
+                   help="comma-separated speaker labels for the splitter to use")
+    c.add_argument("--target-min", type=float, default=15.0)
+    c.add_argument("--target-max", type=float, default=120.0)
+    c.set_defaults(func=_cutdown)
+
     args = ap.parse_args(argv)
     return args.func(args)
+
+
+def _cutdown(args: argparse.Namespace) -> int:
+    """Single-command workflow: interview .mov → FCPXML with soundbites lifted to V2.
+
+    Steps:
+      1. Transcribe with whisperx (word-level timestamps).
+      2. Send transcript to Claude; get soundbite ranges.
+      3. Validate (word boundaries, duration, no overlaps).
+      4. Build a cutdown OTIO timeline (V1+A1 = full, V2+A2 = soundbites).
+      5. Export FCPXML + OTIO.
+    """
+    from .ingest import transcribe_interview
+    from .soundbites import find_soundbites, validate_soundbites, DEFAULT_MODEL
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    interview = Path(args.interview).resolve()
+    if not interview.exists():
+        print(json.dumps({"ok": False, "error": f"file not found: {interview}"}))
+        return 2
+
+    print(f"[cutdown] transcribing {interview.name} (this is the slow step) ...",
+          file=sys.stderr)
+    transcript = transcribe_interview(interview, model=args.whisper_model)
+    transcript_path = out_dir / "transcript.json"
+    transcript_path.write_text(json.dumps(transcript, indent=2))
+
+    duration = max(
+        (float(s["end"]) for s in transcript.get("segments", [])),
+        default=0.0,
+    )
+    if duration <= 0:
+        print(json.dumps({"ok": False, "error": "transcript empty — no speech detected"}))
+        return 3
+
+    speakers = [s.strip().lower() for s in args.speakers.split(",") if s.strip()]
+    print(f"[cutdown] finding soundbites (speakers={speakers}, model={args.soundbite_model or DEFAULT_MODEL}) ...",
+          file=sys.stderr)
+    soundbites = find_soundbites(
+        transcript,
+        speakers=speakers,
+        target_min=args.target_min,
+        target_max=args.target_max,
+        model=args.soundbite_model or DEFAULT_MODEL,
+    )
+    soundbites_path = out_dir / "soundbites.json"
+    soundbites_path.write_text(json.dumps(soundbites, indent=2))
+
+    val = validate_soundbites(soundbites, transcript,
+                              min_dur=args.target_min, max_dur=args.target_max)
+    if not val["ok"]:
+        print(f"[cutdown] WARNING — validator flagged issues:", file=sys.stderr)
+        for e in val["errors"]:
+            print(f"           {e}", file=sys.stderr)
+        print("[cutdown] (proceeding anyway — open the FCPXML and QC visually)",
+              file=sys.stderr)
+
+    print(f"[cutdown] building timeline ({len(soundbites)} soundbites) ...",
+          file=sys.stderr)
+    tl = build_cutdown_timeline(interview, duration, soundbites, name=interview.stem)
+    otio_path = out_dir / f"{interview.stem}_cutdown.otio"
+    fcpxml_path = out_dir / f"{interview.stem}_cutdown.fcpxml"
+    otio.adapters.write_to_file(tl, str(otio_path), adapter_name="otio_json")
+    export_timeline(tl, fcpxml_path, fmt="fcpxml")
+
+    summary = {
+        "ok": True,
+        "interview": str(interview),
+        "duration": duration,
+        "soundbite_count": len(soundbites),
+        "validator": val,
+        "transcript": str(transcript_path),
+        "soundbites": str(soundbites_path),
+        "otio": str(otio_path),
+        "fcpxml": str(fcpxml_path),
+    }
+    print(json.dumps(summary, indent=2))
+    return 0
 
 
 def _ingest(args: argparse.Namespace) -> int:

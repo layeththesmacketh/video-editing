@@ -210,3 +210,85 @@ def export_timeline(
         raise ValueError(f"unsupported export format: {key}")
     otio.adapters.write_to_file(tl, str(out_path), adapter_name=adapter)
     return out_path
+
+
+def build_cutdown_timeline(
+    interview_path: str | Path,
+    duration: float,
+    soundbites: list[dict[str, Any]],
+    *,
+    name: str = "cutdown",
+    rate: float = DEFAULT_RATE,
+) -> otio.schema.Timeline:
+    """Cutdown layout for the soundbite splitter.
+
+    V1 + A1: the full interview, end to end (the spine you can scrub).
+    V2 + A2: only the soundbite ranges, placed at their original timecodes,
+             so it's obvious which segments survived the edit.
+
+    `soundbites` is a list of {"in": float, "out": float, ...}. The full clip
+    runs 0..duration; each soundbite is a sub-range of the same source.
+    """
+    interview_path = str(interview_path)
+    tl = otio.schema.Timeline(name=name)
+    tl.global_start_time = _rt(0.0, rate)
+
+    v1 = otio.schema.Track(name="V1_MASTER", kind=otio.schema.TrackKind.Video)
+    v2 = otio.schema.Track(name="V2_SOUNDBITES", kind=otio.schema.TrackKind.Video)
+    a1 = otio.schema.Track(name="A1_MASTER", kind=otio.schema.TrackKind.Audio)
+    a2 = otio.schema.Track(name="A2_SOUNDBITES", kind=otio.schema.TrackKind.Audio)
+
+    v1.append(otio.schema.Clip(
+        name=Path(interview_path).stem,
+        media_reference=_media_ref(interview_path, duration, rate),
+        source_range=_range(0.0, duration, rate),
+    ))
+    a1.append(otio.schema.Clip(
+        name=Path(interview_path).stem + "_audio",
+        media_reference=_media_ref(interview_path, duration, rate),
+        source_range=_range(0.0, duration, rate),
+    ))
+
+    v2_cursor = 0.0
+    a2_cursor = 0.0
+    sorted_sb = sorted(soundbites, key=lambda s: float(s["in"]))
+    for s in sorted_sb:
+        sb_in = float(s["in"]); sb_out = float(s["out"])
+        sb_dur = sb_out - sb_in
+        if sb_dur <= 0:
+            raise ValueError(f"non-positive soundbite duration: {s}")
+        if sb_in < v2_cursor:
+            raise ValueError(f"soundbite overlap on V2 at t={sb_in} (cursor={v2_cursor})")
+        gap = sb_in - v2_cursor
+        if gap > 1e-6:
+            v2.append(otio.schema.Gap(source_range=_range(0.0, gap, rate)))
+            a2.append(otio.schema.Gap(source_range=_range(0.0, gap, rate)))
+
+        clip_name = (s.get("headline") or Path(interview_path).stem).strip()
+        v2.append(otio.schema.Clip(
+            name=clip_name,
+            media_reference=_media_ref(interview_path, sb_out, rate),
+            source_range=_range(sb_in, sb_dur, rate),
+            metadata={"lattimore": {"speaker": s.get("speaker", ""), "why": s.get("why", "")}},
+        ))
+        a2.append(otio.schema.Clip(
+            name=clip_name + "_audio",
+            media_reference=_media_ref(interview_path, sb_out, rate),
+            source_range=_range(sb_in, sb_dur, rate),
+        ))
+        v2_cursor = sb_out
+        a2_cursor = sb_out
+
+    tl.tracks.append(v1)
+    tl.tracks.append(v2)
+    tl.tracks.append(a1)
+    tl.tracks.append(a2)
+
+    tl.metadata["lattimore"] = {
+        "rate": rate,
+        "kind": "cutdown",
+        "duration": duration,
+        "soundbite_count": len(sorted_sb),
+        "track_layout": ["V1_MASTER", "V2_SOUNDBITES", "A1_MASTER", "A2_SOUNDBITES"],
+    }
+    return tl
