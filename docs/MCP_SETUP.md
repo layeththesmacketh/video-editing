@@ -15,6 +15,20 @@ With both wired up, Claude can transcribe an interview, decide what to cut, and 
 - **DaVinci Resolve Studio** — the free edition has no scripting API, so the Resolve MCP cannot connect to it.
 - Homebrew, Node ≥ 20, Python ≥ 3.10, ffmpeg, Claude Code CLI
 - `ANTHROPIC_API_KEY` exported in your shell (needed for ButterCut's vision-analysis on B-roll)
+- `HF_TOKEN` exported in your shell (needed for speaker diarization via pyannote — see below)
+
+### HuggingFace token (one-time, for diarization)
+
+Speaker diarization uses pyannote's models, which are gated behind HuggingFace terms acceptance.
+
+1. Create a read token at <https://huggingface.co/settings/tokens>.
+2. Accept the terms at <https://hf.co/pyannote/speaker-diarization-3.1>.
+3. Accept the terms at <https://hf.co/pyannote/segmentation-3.0>.
+4. Add to `~/.zshrc`:
+
+   ```bash
+   export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   ```
 
 ## Resolve Studio prep (one-time)
 
@@ -56,21 +70,71 @@ Then in Claude Code, with an interview open in Resolve:
 
 If Claude responds with a real number, both MCPs are talking.
 
-## End-to-end: remove silences without exporting
+## End-to-end: speaker-aware cut, no exports
 
-With the interview clip on V1 of an open Resolve timeline, paste into Claude Code:
+This is the primary use case: an interview with multiple speakers (interviewer + one or more interviewees), and you want to keep only the interviewee(s) and silences while cutting out the interviewer's voice. The lattimore MCP exposes two tools for this:
+
+| Tool | What it does |
+|---|---|
+| `diarize_interview` | Transcribes + speaker-diarizes a video with WhisperX + pyannote. Writes `diarized.json` (word-level transcript with speaker labels) and `speaker_report.json` (per-speaker stats + sample quotes). |
+| `plan_speaker_cuts` | Takes a `diarized.json` plus a list of speaker labels to KEEP. Returns a cut plan — the timeline ranges to DELETE. Silences (no one talking) and the kept-speaker ranges are preserved. |
+
+### The workflow
+
+With the interview on V1 of an open Resolve timeline, paste into Claude Code:
+
+> "Read the active Resolve timeline. Diarize the V1 clip via `lattimore.diarize_interview` into `./work/`. Show me `speaker_report.json` so I can identify each speaker. Then call `plan_speaker_cuts` with the speakers I tell you to keep. Apply each cut range to V1 in Resolve via the davinci-resolve MCP (`SplitClip` + delete the segment between cut points). Preserve all silences."
+
+Under the hood:
+
+1. **Resolve MCP** returns the V1 clip path from the active timeline.
+2. **Lattimore MCP / `diarize_interview`** runs WhisperX (transcription + forced alignment) and pyannote (speaker ranges), assigns a speaker label to every word, and writes:
+   - `diarized.json` — WhisperX-shaped, plus `speaker` on every word and a `diarization` list of speaker ranges.
+   - `speaker_report.json` — per-speaker total talk time, share of speech, share of total, first/last appearance, 3 sample quotes per speaker.
+3. **You pick** which speaker label(s) correspond to the interviewee(s) — the sample quotes make this obvious.
+4. **Lattimore MCP / `plan_speaker_cuts`** computes the cut plan:
+   - A range is cut iff *someone is talking* AND *no kept speaker is talking in that range*.
+   - Silences are preserved (per the editorial constraint — held beats and reactions matter).
+   - Adjacent cuts within `merge_gap` seconds are merged into one cut.
+   - Cuts shorter than `min_cut_duration` are dropped (noise floor).
+5. **Resolve MCP** applies each cut: `SplitClip` at the cut's start TC, `SplitClip` at the cut's end TC, then delete the middle segment.
+
+No FCPXML round-trip. Everything stays in the active Resolve project.
+
+### Tunables on `plan_speaker_cuts`
+
+| Param | Default | What it does |
+|---|---|---|
+| `keep` | required | Speaker labels to KEEP (e.g. `["SPEAKER_00", "SPEAKER_02"]`). |
+| `merge_gap` | 0.3 | Cuts separated by ≤ this many seconds merge into one. |
+| `pad_start`, `pad_end` | 0.0 | Inward trim on each cut so the kept speaker's adjacent breath isn't clipped. Try 0.05 if you hear clipping. |
+| `min_cut_duration` | 0.1 | Drop micro-cuts shorter than this — usually noise/mis-attribution. |
+
+### CLI equivalents (useful for one-off runs without the MCP)
+
+```bash
+# 1. Diarize.
+python -m lattimore.cli diarize ./interview.mov ./work/
+
+# 2. Look at ./work/speaker_report.json, identify your speakers.
+
+# 3. Plan the cut (e.g. keep only SPEAKER_00).
+python -m lattimore.cli speaker-cut ./work/diarized.json \
+    --keep SPEAKER_00 \
+    --out ./work/cuts.json
+
+# 4. ./work/cuts.json now contains the ranges to delete from the timeline.
+```
+
+## Bonus: pure silence removal (no diarization needed)
+
+If your interview is a single speaker and you just want silences cut:
+
+With the interview clip on V1 of an open Resolve timeline:
 
 > "Read the active timeline from Resolve. Transcribe the V1 clip with `lattimore.transcribe_video`. From the word-level timestamps, find every gap > 0.4 seconds. Make blade cuts at each gap boundary on V1 and delete the gaps in place. Respect the Lattimore taste doc: do not cut reactions or beats that are doing editorial work — when in doubt, leave the gap."
 
-What happens under the hood:
-
-1. Resolve MCP returns the active timeline + V1 clip path.
-2. Lattimore MCP runs WhisperX → returns word-level timestamps.
-3. Claude identifies gaps using a configurable threshold (0.4s is a starting point — tighten for a more kinetic feel, loosen to preserve breath).
-4. Claude reads `prompts/lattimore_taste.md` and the `interview-paper-edit` skill to flag protected ranges (hooks, reactions, beats).
-5. Claude calls the Resolve MCP's `SplitClip` + `DeleteClips` (or equivalent range-delete) for each non-protected gap.
-
-No FCPXML, no XML, no Recut, no buttercut.io round-trip. Everything stays in the active Resolve project.
+This is the simpler path — no HF_TOKEN, no diarization, just gaps-between-words.
 
 ## Alternative: use Resolve's native transcription
 

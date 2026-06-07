@@ -16,6 +16,7 @@ import * as lib from "./tools/library.js";
 import * as ingest from "./tools/ingest.js";
 import * as edit from "./tools/edit.js";
 import * as research from "./tools/research.js";
+import * as diarize from "./tools/diarize.js";
 import { statusOf, resultOf, listJobs } from "./jobs.js";
 
 const tools = [
@@ -56,6 +57,39 @@ const tools = [
     description: "ButterCut summarize-video. Returns a jobId.",
     schema: z.object({ video_path: z.string() }),
     handler: (a) => ingest.summarizeVideo(a),
+  },
+  // ── diarization (local: whisperx + pyannote, needs HF_TOKEN) ──
+  {
+    name: "diarize_interview",
+    description:
+      "Transcribe + diarize speakers (WhisperX + pyannote). Writes diarized.json and speaker_report.json " +
+      "into out_dir. Returns a jobId; poll job_status / job_result. Reads HF_TOKEN from env.",
+    schema: z.object({
+      video_path: z.string(),
+      out_dir: z.string(),
+      whisper_model: z.string().optional(),
+      num_speakers: z.number().int().positive().optional(),
+      min_speakers: z.number().int().positive().optional(),
+      max_speakers: z.number().int().positive().optional(),
+    }),
+    handler: (a) => diarize.diarizeInterview(a),
+  },
+  {
+    name: "plan_speaker_cuts",
+    description:
+      "Given a diarized.json and which speakers to KEEP, emit a cut plan (timeline ranges to DELETE). " +
+      "Silences and kept-speaker ranges are preserved. Use this output to drive davinci-resolve-mcp's " +
+      "split/delete operations on the active timeline.",
+    schema: z.object({
+      diarized_path: z.string(),
+      keep: z.array(z.string()).min(1),
+      merge_gap: z.number().nonnegative().optional(),
+      pad_start: z.number().nonnegative().optional(),
+      pad_end: z.number().nonnegative().optional(),
+      min_cut_duration: z.number().nonnegative().optional(),
+      out_path: z.string().optional(),
+    }),
+    handler: (a) => diarize.planSpeakerCuts(a),
   },
   // ── editorial ──
   {

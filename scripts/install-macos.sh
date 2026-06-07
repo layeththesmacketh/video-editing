@@ -47,6 +47,15 @@ if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
   warn "    export ANTHROPIC_API_KEY=sk-ant-..."
 fi
 
+if [ -z "${HF_TOKEN:-}" ] && [ -z "${HUGGINGFACE_TOKEN:-}" ]; then
+  warn "HF_TOKEN is not set in this shell."
+  warn "Speaker diarization (pyannote) needs a HuggingFace token. To set up:"
+  warn "    1. https://huggingface.co/settings/tokens -> create a read token"
+  warn "    2. Accept terms at https://hf.co/pyannote/speaker-diarization-3.1"
+  warn "    3. Accept terms at https://hf.co/pyannote/segmentation-3.0"
+  warn "    4. Add to ~/.zshrc:  export HF_TOKEN=hf_..."
+fi
+
 bold "==> Initializing submodules (vendor/buttercut, vendor/cutlass)"
 git submodule update --init --recursive
 
@@ -87,10 +96,12 @@ You should see both:
   - davinci-resolve   (direct Resolve control)
   - lattimore         (transcribe / paper-edit / compose / export)
 
-End-to-end smoke test (paste into Claude Code with an interview open in Resolve):
+End-to-end smoke test — speaker-aware cut (interview open in Resolve):
 
-  "Read the active timeline from Resolve. Transcribe the V1 clip via
-   lattimore.transcribe_video. Find every gap > 0.4s between words.
-   Make blade cuts and delete those gaps from V1 in place."
+  "Read the active timeline from Resolve. Diarize the V1 clip with
+   lattimore.diarize_interview into ./work. Show me the speaker report so
+   I can pick which speakers to keep. Then call plan_speaker_cuts with my
+   choice. Apply the resulting cut ranges to V1 via davinci-resolve-mcp
+   (split + delete) so only the kept speakers and silences remain."
 
 EOF
