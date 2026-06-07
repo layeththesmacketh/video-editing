@@ -7,6 +7,8 @@ OpenTimelineIO, plus paper-edit and B-roll-matching helpers.
 from .timeline import (
     build_timeline,
     build_cutdown_timeline,
+    build_keeps_timeline,
+    cuts_to_keeps,
     export_timeline,
     parse_timecode,
     timecode,
@@ -17,6 +19,8 @@ from .broll_matcher import find_footage_url, validate_broll, place_broll
 __all__ = [
     "build_timeline",
     "build_cutdown_timeline",
+    "build_keeps_timeline",
+    "cuts_to_keeps",
     "export_timeline",
     "parse_timecode",
     "timecode",

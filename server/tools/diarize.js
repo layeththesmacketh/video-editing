@@ -85,6 +85,40 @@ export function planSpeakerCuts({
   };
 }
 
+export function buildCutTimeline({
+  source_clip,
+  cuts_path,
+  out_path,
+  source_duration,
+  rate = 24.0,
+  name = "keeps",
+  fmt,
+  min_keep_duration = 0.0,
+}) {
+  if (!source_clip) throw new Error("source_clip required");
+  if (!cuts_path) throw new Error("cuts_path required");
+  if (!out_path) throw new Error("out_path required");
+
+  const args = [
+    "-m", "lattimore.cli", "build-cut-timeline",
+    source_clip, cuts_path, out_path,
+    "--rate", String(rate),
+    "--name", name,
+    "--min-keep-duration", String(min_keep_duration),
+  ];
+  if (source_duration != null) args.push("--source-duration", String(source_duration));
+  if (fmt) args.push("--fmt", fmt);
+
+  return {
+    jobId: createJob({
+      cmd: PYTHON,
+      args,
+      cwd: REPO_ROOT,
+      label: `build-cut-timeline ${path.basename(out_path)}`,
+    }),
+  };
+}
+
 export function planSilenceCuts({
   source,
   out_path,

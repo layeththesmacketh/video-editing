@@ -4,10 +4,19 @@ This repo's pipeline runs through two MCP servers that Claude Code talks to:
 
 | MCP | What it does |
 |---|---|
-| `lattimore` | This repo's own server (`server/index.js`). Transcribe / analyze / paper-edit / compose OTIO / export. Wraps ButterCut for ingest. |
-| `davinci-resolve` | Direct control of DaVinci Resolve Studio — read timeline state, make blade cuts, delete ranges, move clips, add markers. |
+| `lattimore` | This repo's own server (`server/index.js`). Transcribe / diarize / paper-edit / compose OTIO / export FCPXML. |
+| `davinci-resolve` | Direct control of DaVinci Resolve Studio — read timeline state, delete clips, append to timeline, import FCPXML, manage projects/media pool. |
 
-With both wired up, Claude can transcribe an interview, decide what to cut, and apply those cuts on the Resolve timeline **without exporting an XML round-trip**.
+Together they let Claude transcribe an interview, decide what to cut, and **produce a new tightened timeline inside the same Resolve project** by building an FCPXML of just the kept ranges and importing it via the Resolve MCP. The original timeline is left intact for comparison.
+
+### A note on the workflow
+
+Resolve's Python scripting API **does not support splitting / blading a clip on the timeline at an arbitrary timecode**. There is no `SplitClip` method. The documented workaround (used here) is:
+
+1. Build a new timeline composed of the kept source ranges butted together.
+2. Import that timeline via `MediaPool.ImportTimelineFromFile`.
+
+This stays inside Resolve — you never leave the active project to use an external NLE — but it does generate an FCPXML in your work dir as the transport. If you want absolute purity (no XML artifact on disk), the alternative is `DeleteClips` + `AppendToTimeline` per keep range, which mutates the existing timeline in place. The current skills use the FCPXML-import path because it's non-destructive and the FCPXML is auditable.
 
 ## Requirements
 
@@ -70,36 +79,35 @@ Then in Claude Code, with an interview open in Resolve:
 
 If Claude responds with a real number, both MCPs are talking.
 
-## End-to-end: speaker-aware cut, no exports
+## End-to-end: speaker-aware cut
 
-This is the primary use case: an interview with multiple speakers (interviewer + one or more interviewees), and you want to keep only the interviewee(s) and silences while cutting out the interviewer's voice. The lattimore MCP exposes two tools for this:
+This is the primary use case: an interview with multiple speakers (interviewer + one or more interviewees), and you want to keep only the interviewee(s) and silences while cutting out the interviewer's voice. The lattimore MCP exposes three tools that compose into the workflow:
 
 | Tool | What it does |
 |---|---|
-| `diarize_interview` | Transcribes + speaker-diarizes a video with WhisperX + pyannote. Writes `diarized.json` (word-level transcript with speaker labels) and `speaker_report.json` (per-speaker stats + sample quotes). |
-| `plan_speaker_cuts` | Takes a `diarized.json` plus a list of speaker labels to KEEP. Returns a cut plan — the timeline ranges to DELETE. Silences (no one talking) and the kept-speaker ranges are preserved. |
+| `diarize_interview` | Transcribes + speaker-diarizes a video with WhisperX + pyannote. Writes `diarized.json` and `speaker_report.json`. |
+| `plan_speaker_cuts` | Takes a `diarized.json` plus speaker labels to KEEP. Returns the cut plan (ranges to DELETE). |
+| `build_cut_timeline` | Takes a cuts plan + the source clip. Inverts the cuts to keeps and writes an FCPXML / XML / EDL / OTIO of the kept ranges butted together. Import into Resolve. |
 
 ### The workflow
 
 With the interview on V1 of an open Resolve timeline, paste into Claude Code:
 
-> "Read the active Resolve timeline. Diarize the V1 clip via `lattimore.diarize_interview` into `./work/`. Show me `speaker_report.json` so I can identify each speaker. Then call `plan_speaker_cuts` with the speakers I tell you to keep. Apply each cut range to V1 in Resolve via the davinci-resolve MCP (`SplitClip` + delete the segment between cut points). Preserve all silences."
+> "Run the `speaker-cut` skill on the V1 clip in the active Resolve timeline."
 
 Under the hood:
 
-1. **Resolve MCP** returns the V1 clip path from the active timeline.
-2. **Lattimore MCP / `diarize_interview`** runs WhisperX (transcription + forced alignment) and pyannote (speaker ranges), assigns a speaker label to every word, and writes:
-   - `diarized.json` — WhisperX-shaped, plus `speaker` on every word and a `diarization` list of speaker ranges.
-   - `speaker_report.json` — per-speaker total talk time, share of speech, share of total, first/last appearance, 3 sample quotes per speaker.
-3. **You pick** which speaker label(s) correspond to the interviewee(s) — the sample quotes make this obvious.
+1. **Resolve MCP** returns the V1 clip's absolute source path + timeline frame rate.
+2. **Lattimore MCP / `diarize_interview`** runs WhisperX + pyannote and writes:
+   - `diarized.json` — WhisperX-shaped transcript with per-word speaker labels + a `diarization` list of speaker ranges.
+   - `speaker_report.json` — per-speaker total talk time, share of speech, first/last appearance, 3 sample quotes per speaker.
+3. **You pick** which speaker label(s) are the interviewee(s) — the sample quotes make this obvious.
 4. **Lattimore MCP / `plan_speaker_cuts`** computes the cut plan:
    - A range is cut iff *someone is talking* AND *no kept speaker is talking in that range*.
-   - Silences are preserved (per the editorial constraint — held beats and reactions matter).
-   - Adjacent cuts within `merge_gap` seconds are merged into one cut.
-   - Cuts shorter than `min_cut_duration` are dropped (noise floor).
-5. **Resolve MCP** applies each cut: `SplitClip` at the cut's start TC, `SplitClip` at the cut's end TC, then delete the middle segment.
-
-No FCPXML round-trip. Everything stays in the active Resolve project.
+   - Silences are preserved (held beats and reactions matter).
+   - Default padding (0.05s inward on each cut) protects the kept speaker's adjacent words from clipping.
+5. **Lattimore MCP / `build_cut_timeline`** inverts the cuts to keeps and writes an FCPXML where V1+A1 are the kept ranges butted together.
+6. **Resolve MCP / `media_pool` action `ImportTimelineFromFile`** imports the FCPXML as a new timeline in the active project. The original timeline is preserved alongside.
 
 ### Tunables on `plan_speaker_cuts`
 
@@ -138,7 +146,9 @@ The MCP tool:
 
 | Tool | What it does |
 |---|---|
-| `plan_silence_cuts` | Takes a video (transcribes it) or an existing transcript.json. Finds gaps between words longer than `min_gap` (default 0.4s). Emits the same `cuts: [{start, end, reason}]` shape as `plan_speaker_cuts`, so the same Resolve apply-loop works. |
+| `plan_silence_cuts` | Takes a video (transcribes it) or an existing transcript.json. Finds gaps between words longer than `min_gap` (default 0.4s). Emits the same `cuts: [{start, end, reason}]` shape as `plan_speaker_cuts`. |
+
+The workflow is identical to speaker-cut: plan cuts → `build_cut_timeline` to FCPXML → `media_pool.ImportTimelineFromFile` to bring it back as a new timeline.
 
 ### Padding is on by default
 

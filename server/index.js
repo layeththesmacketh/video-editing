@@ -114,6 +114,26 @@ const tools = [
     }),
     handler: (a) => diarize.planSilenceCuts(a),
   },
+  {
+    name: "build_cut_timeline",
+    description:
+      "From a cuts.json (produced by plan_speaker_cuts or plan_silence_cuts) plus the source clip path, " +
+      "build an FCPXML / Premiere XML / EDL / OTIO of just the KEPT ranges (cuts inverted to keeps, " +
+      "butted together on V1 + A1). Hand the output to davinci-resolve-mcp's media_pool tool with " +
+      "action 'ImportTimelineFromFile' to import as a new timeline in the active project. This is the " +
+      "workaround for Resolve's missing SplitClip API — the kept-ranges path stays inside Resolve.",
+    schema: z.object({
+      source_clip: z.string(),
+      cuts_path: z.string(),
+      out_path: z.string(),
+      source_duration: z.number().positive().optional(),
+      rate: z.number().positive().optional(),
+      name: z.string().optional(),
+      fmt: z.enum(["fcpxml", "xml", "edl", "otio"]).optional(),
+      min_keep_duration: z.number().nonnegative().optional(),
+    }),
+    handler: (a) => diarize.buildCutTimeline(a),
+  },
   // ── editorial ──
   {
     name: "paper_edit_starter",

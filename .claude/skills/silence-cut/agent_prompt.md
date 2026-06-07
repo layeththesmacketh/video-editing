@@ -1,8 +1,19 @@
 # silence-cut — operating procedure
 
-## Step 1 — Read the active timeline
+**Why this workflow.** Resolve's Python scripting API does not expose
+SplitClip / blade / razor on a timeline. We build an FCPXML of just the
+kept ranges and import it as a new timeline in the active project — the
+original timeline is preserved for comparison.
 
-Call the davinci-resolve MCP for the active project + timeline + V1 clip path. If V1 has more than one clip, ask the editor which is the interview.
+## Step 1 — Read the active project + V1 source
+
+Use the davinci-resolve MCP to get:
+
+- The active project + a working directory.
+- The V1 clip on the active timeline and the absolute source file path.
+- The timeline frame rate.
+
+If V1 has more than one clip, ask which is the interview.
 
 ## Step 2 — Plan the cuts
 
@@ -11,76 +22,102 @@ Call `lattimore.plan_silence_cuts`:
 ```
 {
   "source": "<absolute V1 clip path from Step 1>",
-  "out_path": "<project work dir>/silence_cuts.json",
-  "transcript_out": "<project work dir>/transcript.json",
+  "out_path": "<work_dir>/silence_cuts.json",
+  "transcript_out": "<work_dir>/transcript.json",
   "whisper_model": "small.en",
-  "min_gap": 0.4,           // gaps shorter than this are KEPT (natural breath)
-  // pad_start, pad_end, merge_gap, min_cut_duration — leave defaults unless asked
+  "min_gap": 0.4
+  // pad_start/pad_end default to 0.05 — keep defaults unless editor asks
 }
 ```
 
-Returns a `jobId`. Poll `job_status` until done; `job_result` gives the cut plan summary + the saved `silence_cuts.json` path.
-
-This call transcribes if `source` is a video. On first run WhisperX downloads ~500MB of model — tell the editor.
+Poll `job_status` / `job_result`. The first run transcribes (slow — WhisperX downloads ~500MB on first use). Subsequent runs that pass the cached `transcript.json` as `source` are instant.
 
 ## Step 3 — Review with the editor
 
-Read `silence_cuts.json`. Report to the editor:
+Read `silence_cuts.json`. Report:
 
 - Total cuts proposed.
-- Cut duration vs original duration (`summary.cut_duration` / `summary.original_duration`).
+- Cut duration vs original duration.
 - New runtime (`summary.kept_duration`).
 
-If `cut_duration / original_duration` > 30%, pause and confirm. That much silence is unusual for a normal interview and may indicate the gap threshold is too tight or the transcript missed words.
+If `cut_duration / original_duration > 30%`, pause and confirm — that much silence is unusual.
 
 ## Step 4 — Taste pass (editorial gate)
 
-Read `prompts/lattimore_taste.md`. Reactions and beats are HERO. Before applying, scan the proposed cuts for:
+Read `prompts/lattimore_taste.md`. Before building the FCPXML, scan the cuts for:
 
-- **Long held silences immediately after a strong line.** If the transcript shows a punchy line ending right before a cut > 1s, that silence is probably doing work. Flag to the editor; default to NOT cutting it.
-- **Cuts at the very start of the clip.** A short pre-roll often establishes presence. Confirm before cutting.
-- **Cuts between obvious thought-units.** A pause between two complete sentences can be a beat; a pause mid-clause is just dead air.
+- **Long held silences after a strong line.** A punchy ending followed by >1s of dead air is doing editorial work. Default to NOT cutting.
+- **Cuts at the very start.** A brief pre-roll establishes presence. Confirm.
+- **Cuts mid-thought.** A pause between clauses is just dead air; a pause between two complete thoughts can be a beat.
 
-Surface the protected ranges to the editor. They approve the final cut list.
+If you flag any cuts as protected, re-call `plan_silence_cuts` with a higher `min_gap` (e.g. 0.6) or edit the `cuts.json` manually before Step 5.
 
-## Step 5 — Apply cuts to Resolve
+## Step 5 — Build the kept-ranges FCPXML
 
-Sort cuts by `start` DESCENDING. For each cut:
-
-1. `SplitClip` at `end` (later TC).
-2. `SplitClip` at `start` (earlier TC).
-3. Delete the segment between the two splits.
-
-Reverse-TC order is mandatory — front-to-back deletion shifts every downstream cut.
-
-Confirm with the editor before applying. Show: "About to make N cuts removing M.MM seconds total."
-
-## Step 6 — Report
-
-Tell the editor:
-
-- Number of cuts applied.
-- Total time removed.
-- New runtime.
-- Where `silence_cuts.json` and `transcript.json` are saved (auditable, re-plannable).
-
-## Failure modes
-
-- **WhisperX model download hangs** → first-run only; let it finish. ~500MB.
-- **Transcript looks empty / cut_count is 0** → check audio actually has speech. The transcribe step may have failed silently if the input is music or unintelligible.
-- **Free Resolve, not Studio** → no scripting API. Stop and report; fall back to the FCPXML export path.
-- **Cuts feel too aggressive** → bump `min_gap` to 0.5 or 0.6 and re-plan from the same transcript (cheap; skip re-transcription by passing the `transcript.json` as `source` instead of the video).
-
-## Re-planning without re-transcription
-
-Once you have `transcript.json`, you can re-plan with different parameters cheaply:
+Call `lattimore.build_cut_timeline`:
 
 ```
-plan_silence_cuts({
-  "source": "<transcript.json from previous run>",
-  "out_path": "<new_cuts.json>",
-  "min_gap": 0.6   // looser pacing
+{
+  "source_clip": "<source path from Step 1>",
+  "cuts_path": "<silence_cuts.json from Step 2>",
+  "out_path": "<work_dir>/<interview-name>_tightened.fcpxml",
+  "rate": <timeline frame rate>,
+  "fmt": "fcpxml",
+  "name": "<interview-name>_tightened",
+  "min_keep_duration": 0.2
+}
+```
+
+Inverts the cuts to keeps and builds an OTIO timeline of V1 + A1 with the kept ranges butted together. Poll `job_status` / `job_result` for confirmation.
+
+## Step 6 — Import into Resolve
+
+Call the davinci-resolve MCP's `media_pool` tool with action `ImportTimelineFromFile`:
+
+```
+media_pool({
+  "action": "ImportTimelineFromFile",
+  "filePath": "<absolute path to tightened.fcpxml>",
+  "importOptions": {
+    "timelineName": "<interview-name>_tightened",
+    "importSourceClips": false,
+    "sourceClipsPath": "<dir containing source clip>"
+  }
 })
 ```
 
-This is the fast iteration loop when the editor wants to try different gap thresholds.
+A new timeline appears in the active project. The original is untouched.
+
+## Step 7 — Switch to the new timeline
+
+Call the Resolve MCP to set the new timeline as current so the editor sees it.
+
+## Step 8 — Report
+
+Tell the editor:
+
+- New timeline name (active in Resolve).
+- Number of cuts in the new timeline (= keep ranges - 1).
+- New runtime vs original.
+- Paths to `transcript.json`, `silence_cuts.json`, `tightened.fcpxml`.
+
+## Failure modes
+
+- **Free Resolve** → no scripting API. Cannot proceed.
+- **WhisperX model download hangs** → first run only; let it finish.
+- **Transcript empty / cut_count is 0** → input may be music or unintelligible. Check audio.
+- **ImportTimelineFromFile relink errors** → set `sourceClipsPath` to the actual source directory.
+
+## Re-planning without re-transcribing
+
+Once you have `transcript.json`, re-plan with new parameters cheaply:
+
+```
+plan_silence_cuts({
+  "source": "<transcript.json>",  // not the video
+  "out_path": "<new_cuts.json>",
+  "min_gap": 0.6
+})
+```
+
+Then re-run `build_cut_timeline` to a new FCPXML name and re-import. Each iteration creates a new timeline in Resolve so you can A/B them.

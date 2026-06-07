@@ -98,10 +98,10 @@ You should see both:
 
 End-to-end smoke test — speaker-aware cut (interview open in Resolve):
 
-  "Read the active timeline from Resolve. Diarize the V1 clip with
-   lattimore.diarize_interview into ./work. Show me the speaker report so
-   I can pick which speakers to keep. Then call plan_speaker_cuts with my
-   choice. Apply the resulting cut ranges to V1 via davinci-resolve-mcp
-   (split + delete) so only the kept speakers and silences remain."
+  "Run the speaker-cut skill on the V1 clip in the active Resolve timeline."
+
+(The skill drives: diarize -> speaker report -> you pick the keep speakers
+ -> plan cuts -> build FCPXML of keeps -> import as a new timeline in
+ Resolve. The original timeline stays intact for comparison.)
 
 EOF

@@ -212,6 +212,99 @@ def export_timeline(
     return out_path
 
 
+def cuts_to_keeps(
+    cuts: list[dict[str, Any]],
+    duration: float,
+    *,
+    min_keep_duration: float = 0.0,
+) -> list[dict[str, float]]:
+    """Invert a cut plan to a keep plan.
+
+    Given total `duration` and a sorted list of cuts (each with `start`/`end`),
+    return the complement: the timeline ranges to KEEP. Used to drive the
+    FCPXML-import workflow, where we rebuild the timeline from kept ranges
+    rather than splitting + deleting in place (Resolve's API doesn't support
+    blade-on-timeline).
+    """
+    if duration <= 0:
+        return []
+    sorted_cuts = sorted(
+        ({"start": float(c["start"]), "end": float(c["end"])} for c in cuts),
+        key=lambda c: c["start"],
+    )
+    keeps: list[dict[str, float]] = []
+    cursor = 0.0
+    for c in sorted_cuts:
+        s = max(c["start"], cursor)
+        e = min(c["end"], duration)
+        if s > cursor:
+            keeps.append({"start": cursor, "end": s})
+        cursor = max(cursor, e)
+    if cursor < duration:
+        keeps.append({"start": cursor, "end": duration})
+    if min_keep_duration > 0:
+        keeps = [k for k in keeps if (k["end"] - k["start"]) >= min_keep_duration]
+    return keeps
+
+
+def build_keeps_timeline(
+    source_clip: str | Path,
+    source_duration: float,
+    keeps: list[dict[str, float]],
+    *,
+    name: str = "keeps",
+    rate: float = DEFAULT_RATE,
+) -> otio.schema.Timeline:
+    """Build an OTIO timeline where V1 (+ A1) is a sequence of `keeps` ranges
+    from `source_clip` butted together with no gaps.
+
+    Exported as FCPXML, this is what Resolve's `MediaPool.ImportTimelineFromFile`
+    consumes to produce a new timeline of just the kept material — the
+    documented workaround for the missing SplitClip API.
+    """
+    source = str(source_clip)
+    tl = otio.schema.Timeline(name=name)
+    tl.global_start_time = _rt(0.0, rate)
+
+    v1 = otio.schema.Track(name="V1", kind=otio.schema.TrackKind.Video)
+    a1 = otio.schema.Track(name="A1", kind=otio.schema.TrackKind.Audio)
+
+    total_kept = 0.0
+    for k in keeps:
+        k_in = float(k["start"])
+        k_out = float(k["end"])
+        k_dur = k_out - k_in
+        if k_dur <= 0:
+            raise ValueError(f"non-positive keep duration: {k}")
+        if k_in < 0 or k_out > source_duration + 1e-6:
+            raise ValueError(
+                f"keep {k} outside source duration {source_duration}"
+            )
+        v1.append(otio.schema.Clip(
+            name=Path(source).stem,
+            media_reference=_media_ref(source, k_out, rate),
+            source_range=_range(k_in, k_dur, rate),
+        ))
+        a1.append(otio.schema.Clip(
+            name=Path(source).stem + "_audio",
+            media_reference=_media_ref(source, k_out, rate),
+            source_range=_range(k_in, k_dur, rate),
+        ))
+        total_kept += k_dur
+
+    tl.tracks.append(v1)
+    tl.tracks.append(a1)
+    tl.metadata["lattimore"] = {
+        "rate": rate,
+        "kind": "keeps",
+        "source_clip": source,
+        "source_duration": source_duration,
+        "keep_count": len(keeps),
+        "total_kept": total_kept,
+    }
+    return tl
+
+
 def build_cutdown_timeline(
     interview_path: str | Path,
     duration: float,

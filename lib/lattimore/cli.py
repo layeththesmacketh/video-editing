@@ -16,6 +16,9 @@ Usage:
     python -m lattimore.cli silence-cut <video.mov|transcript.json> [--out cuts.json]
                                    [--min-gap 0.4] [--pad-start 0.05] [--pad-end 0.05]
                                    [--no-cut-leading] [--no-cut-trailing]
+    python -m lattimore.cli build-cut-timeline <source_clip> <cuts.json> <out.fcpxml>
+                                   [--source-duration SECONDS] [--rate 24]
+                                   [--name keeps] [--fmt fcpxml|xml|edl|otio]
 """
 
 from __future__ import annotations
@@ -129,8 +132,67 @@ def main(argv: list[str] | None = None) -> int:
     sx.add_argument("--no-cut-trailing", dest="cut_trailing", action="store_false")
     sx.set_defaults(func=_silence_cut, cut_leading=True, cut_trailing=True)
 
+    bct = sub.add_parser("build-cut-timeline",
+                         help="from a cuts.json + the source clip, build an FCPXML/XML/EDL/OTIO "
+                              "of just the KEPT ranges. Import the result into Resolve.")
+    bct.add_argument("source_clip", help="path to the original interview clip")
+    bct.add_argument("cuts_json", help="cuts plan produced by speaker-cut or silence-cut")
+    bct.add_argument("out_path", help="destination — extension picks the format unless --fmt is set")
+    bct.add_argument("--source-duration", type=float, default=None,
+                     help="duration of the source clip in seconds; default: from cuts.json.summary.original_duration")
+    bct.add_argument("--rate", type=float, default=24.0)
+    bct.add_argument("--name", default="keeps")
+    bct.add_argument("--fmt", default=None, choices=["fcpxml", "xml", "edl", "otio", None])
+    bct.add_argument("--min-keep-duration", type=float, default=0.0,
+                     help="drop keep ranges shorter than this (default 0 = keep all)")
+    bct.set_defaults(func=_build_cut_timeline)
+
     args = ap.parse_args(argv)
     return args.func(args)
+
+
+def _build_cut_timeline(args: argparse.Namespace) -> int:
+    from .timeline import build_keeps_timeline, cuts_to_keeps
+
+    cuts_path = Path(args.cuts_json)
+    if not cuts_path.exists():
+        print(json.dumps({"ok": False, "error": f"file not found: {cuts_path}"}))
+        return 2
+    plan = json.loads(cuts_path.read_text())
+
+    duration = args.source_duration
+    if duration is None:
+        duration = float(plan.get("summary", {}).get("original_duration") or 0.0)
+    if duration <= 0:
+        print(json.dumps({"ok": False,
+                          "error": "source_duration unknown — pass --source-duration"}))
+        return 3
+
+    cuts = plan.get("cuts", [])
+    keeps = cuts_to_keeps(cuts, duration, min_keep_duration=args.min_keep_duration)
+    if not keeps:
+        print(json.dumps({"ok": False,
+                          "error": "no keep ranges — cuts consume the entire clip"}))
+        return 4
+
+    tl = build_keeps_timeline(
+        args.source_clip, duration, keeps,
+        name=args.name, rate=args.rate,
+    )
+
+    out = Path(args.out_path)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    export_timeline(tl, out, fmt=args.fmt)
+
+    total_kept = sum(k["end"] - k["start"] for k in keeps)
+    print(json.dumps({
+        "ok": True,
+        "out": str(out),
+        "keep_count": len(keeps),
+        "total_kept": round(total_kept, 2),
+        "source_duration": round(duration, 2),
+    }, indent=2))
+    return 0
 
 
 def _cutdown(args: argparse.Namespace) -> int:
