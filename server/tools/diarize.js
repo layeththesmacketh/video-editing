@@ -54,8 +54,8 @@ export function planSpeakerCuts({
   diarized_path,
   keep,
   merge_gap = 0.3,
-  pad_start = 0.0,
-  pad_end = 0.0,
+  pad_start = 0.05,
+  pad_end = 0.05,
   min_cut_duration = 0.1,
   out_path,
 }) {
@@ -81,6 +81,46 @@ export function planSpeakerCuts({
       args,
       cwd: REPO_ROOT,
       label: `speaker-cut keep=${keep.join(",")}`,
+    }),
+  };
+}
+
+export function planSilenceCuts({
+  source,
+  out_path,
+  transcript_out,
+  whisper_model = "small.en",
+  min_gap = 0.4,
+  merge_gap = 0.3,
+  pad_start = 0.05,
+  pad_end = 0.05,
+  min_cut_duration = 0.1,
+  cut_leading = true,
+  cut_trailing = true,
+}) {
+  if (!source) throw new Error("source required (video file or transcript.json)");
+
+  const args = [
+    "-m", "lattimore.cli", "silence-cut",
+    source,
+    "--whisper-model", whisper_model,
+    "--min-gap", String(min_gap),
+    "--merge-gap", String(merge_gap),
+    "--pad-start", String(pad_start),
+    "--pad-end", String(pad_end),
+    "--min-cut-duration", String(min_cut_duration),
+  ];
+  if (out_path) args.push("--out", out_path);
+  if (transcript_out) args.push("--transcript-out", transcript_out);
+  if (!cut_leading) args.push("--no-cut-leading");
+  if (!cut_trailing) args.push("--no-cut-trailing");
+
+  return {
+    jobId: createJob({
+      cmd: PYTHON,
+      args,
+      cwd: REPO_ROOT,
+      label: `silence-cut ${path.basename(source)}`,
     }),
   };
 }

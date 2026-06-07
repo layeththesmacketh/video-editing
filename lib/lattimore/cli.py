@@ -11,8 +11,11 @@ Usage:
                                    [--whisper-model small.en]
                                    [--min-speakers N] [--max-speakers N] [--num-speakers N]
     python -m lattimore.cli speaker-cut <diarized.json> --keep SPEAKER_00[,SPEAKER_02]
-                                   [--merge-gap 0.3] [--pad-start 0] [--pad-end 0]
+                                   [--merge-gap 0.3] [--pad-start 0.05] [--pad-end 0.05]
                                    [--out cuts.json]
+    python -m lattimore.cli silence-cut <video.mov|transcript.json> [--out cuts.json]
+                                   [--min-gap 0.4] [--pad-start 0.05] [--pad-end 0.05]
+                                   [--no-cut-leading] [--no-cut-trailing]
 """
 
 from __future__ import annotations
@@ -100,12 +103,31 @@ def main(argv: list[str] | None = None) -> int:
                     help="comma-separated speaker labels to KEEP (e.g. SPEAKER_00,SPEAKER_02)")
     sc.add_argument("--merge-gap", type=float, default=0.3,
                     help="merge cuts separated by <= this many seconds")
-    sc.add_argument("--pad-start", type=float, default=0.0,
-                    help="inward trim from each cut's start (avoid clipping the kept speaker)")
-    sc.add_argument("--pad-end", type=float, default=0.0)
+    sc.add_argument("--pad-start", type=float, default=0.05,
+                    help="inward trim from each cut's start (avoid clipping kept speaker)")
+    sc.add_argument("--pad-end", type=float, default=0.05)
     sc.add_argument("--min-cut-duration", type=float, default=0.1)
     sc.add_argument("--out", default=None, help="path to write cuts.json (default: stdout only)")
     sc.set_defaults(func=_speaker_cut)
+
+    sx = sub.add_parser("silence-cut",
+                        help="from a transcript (or video, which will be transcribed), "
+                             "emit a cut plan that removes silences between words")
+    sx.add_argument("source", help="WhisperX transcript.json OR a video file (will be transcribed)")
+    sx.add_argument("--out", default=None, help="path to write cuts.json")
+    sx.add_argument("--transcript-out", default=None,
+                    help="if source is a video, also save the transcript here")
+    sx.add_argument("--whisper-model", default="small.en")
+    sx.add_argument("--min-gap", type=float, default=0.4,
+                    help="gaps shorter than this are kept (natural breath)")
+    sx.add_argument("--merge-gap", type=float, default=0.3)
+    sx.add_argument("--pad-start", type=float, default=0.05,
+                    help="inward trim from each cut's start")
+    sx.add_argument("--pad-end", type=float, default=0.05)
+    sx.add_argument("--min-cut-duration", type=float, default=0.1)
+    sx.add_argument("--no-cut-leading", dest="cut_leading", action="store_false")
+    sx.add_argument("--no-cut-trailing", dest="cut_trailing", action="store_false")
+    sx.set_defaults(func=_silence_cut, cut_leading=True, cut_trailing=True)
 
     args = ap.parse_args(argv)
     return args.func(args)
@@ -243,6 +265,52 @@ def _speaker_cut(args: argparse.Namespace) -> int:
         pad_start=args.pad_start,
         pad_end=args.pad_end,
         min_cut_duration=args.min_cut_duration,
+    )
+
+    if args.out:
+        out_path = Path(args.out)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(plan, indent=2))
+        print(json.dumps({"ok": True, "out": str(out_path), **plan["summary"]}, indent=2))
+    else:
+        print(json.dumps(plan, indent=2))
+    return 0
+
+
+def _silence_cut(args: argparse.Namespace) -> int:
+    from .silence import plan_silence_cuts
+
+    src = Path(args.source)
+    if not src.exists():
+        print(json.dumps({"ok": False, "error": f"file not found: {src}"}))
+        return 2
+
+    if src.suffix.lower() == ".json":
+        transcript = json.loads(src.read_text())
+    else:
+        from .ingest import transcribe_interview
+        print(f"[silence-cut] transcribing {src.name} ...", file=sys.stderr)
+        transcript = transcribe_interview(src, model=args.whisper_model)
+        if args.transcript_out:
+            tp = Path(args.transcript_out)
+            tp.parent.mkdir(parents=True, exist_ok=True)
+            tp.write_text(json.dumps(transcript, indent=2))
+
+    duration = max(
+        (float(s.get("end", 0.0)) for s in transcript.get("segments", []) or []),
+        default=0.0,
+    )
+
+    plan = plan_silence_cuts(
+        transcript,
+        min_gap=args.min_gap,
+        merge_gap=args.merge_gap,
+        pad_start=args.pad_start,
+        pad_end=args.pad_end,
+        min_cut_duration=args.min_cut_duration,
+        cut_leading=args.cut_leading,
+        cut_trailing=args.cut_trailing,
+        duration=duration if args.cut_trailing else None,
     )
 
     if args.out:

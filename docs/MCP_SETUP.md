@@ -126,15 +126,58 @@ python -m lattimore.cli speaker-cut ./work/diarized.json \
 # 4. ./work/cuts.json now contains the ranges to delete from the timeline.
 ```
 
-## Bonus: pure silence removal (no diarization needed)
+## Single-speaker case: silence removal (no diarization, no HF_TOKEN)
 
-If your interview is a single speaker and you just want silences cut:
+If your interview is one speaker and you just want dead air tightened, use the lighter `silence-cut` skill / `plan_silence_cuts` MCP tool.
 
-With the interview clip on V1 of an open Resolve timeline:
+With the interview on V1 of an open Resolve timeline, in Claude Code:
 
-> "Read the active timeline from Resolve. Transcribe the V1 clip with `lattimore.transcribe_video`. From the word-level timestamps, find every gap > 0.4 seconds. Make blade cuts at each gap boundary on V1 and delete the gaps in place. Respect the Lattimore taste doc: do not cut reactions or beats that are doing editorial work — when in doubt, leave the gap."
+> "Run the `silence-cut` skill on the V1 clip in the active Resolve timeline."
 
-This is the simpler path — no HF_TOKEN, no diarization, just gaps-between-words.
+The MCP tool:
+
+| Tool | What it does |
+|---|---|
+| `plan_silence_cuts` | Takes a video (transcribes it) or an existing transcript.json. Finds gaps between words longer than `min_gap` (default 0.4s). Emits the same `cuts: [{start, end, reason}]` shape as `plan_speaker_cuts`, so the same Resolve apply-loop works. |
+
+### Padding is on by default
+
+Both `plan_speaker_cuts` and `plan_silence_cuts` apply `pad_start = pad_end = 0.05` by default — each cut is trimmed 0.05s inward on both ends so the kept speaker's adjacent words don't get clipped. Padding can always be trimmed back manually in Resolve; clipping is destructive, so we default to the conservative side.
+
+Disable with `pad_start=0`, `pad_end=0` if you want raw boundaries.
+
+### Tunables on `plan_silence_cuts`
+
+| Param | Default | What it does |
+|---|---|---|
+| `source` | required | Video path OR transcript.json. If video, transcribes via WhisperX first. |
+| `min_gap` | 0.4 | Gaps shorter than this are KEPT (natural breath). Tighten to 0.3 for kinetic pacing; loosen to 0.6 for deliberate cadence. |
+| `merge_gap` | 0.3 | Cuts within this distance merge into one. |
+| `pad_start`, `pad_end` | 0.05 | Inward trim on each cut. |
+| `cut_leading` | true | Cut silence before the first word. |
+| `cut_trailing` | true | Cut silence after the last word. |
+| `min_cut_duration` | 0.1 | Drop cuts shorter than this after padding/merging. |
+
+### Fast re-planning without re-transcription
+
+The transcribe step is the slow part. Pass a `transcript_out` path on the first call, then for subsequent runs use that transcript as `source`:
+
+```python
+# First run — transcribes (slow).
+plan_silence_cuts({
+  "source": "./interview.mov",
+  "transcript_out": "./work/transcript.json",
+  "out_path": "./work/cuts_v1.json",
+  "min_gap": 0.4
+})
+
+# Re-plan with looser pacing — instant, reuses the transcript.
+plan_silence_cuts({
+  "source": "./work/transcript.json",
+  "out_path": "./work/cuts_v2.json",
+  "min_gap": 0.6
+})
+```
 
 ## Alternative: use Resolve's native transcription
 

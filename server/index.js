@@ -78,8 +78,9 @@ const tools = [
     name: "plan_speaker_cuts",
     description:
       "Given a diarized.json and which speakers to KEEP, emit a cut plan (timeline ranges to DELETE). " +
-      "Silences and kept-speaker ranges are preserved. Use this output to drive davinci-resolve-mcp's " +
-      "split/delete operations on the active timeline.",
+      "Silences and kept-speaker ranges are preserved. Padding (0.05s inward on each cut) is applied " +
+      "by default so the kept speaker's adjacent words don't get clipped. Use this output to drive " +
+      "davinci-resolve-mcp's split/delete operations on the active timeline.",
     schema: z.object({
       diarized_path: z.string(),
       keep: z.array(z.string()).min(1),
@@ -90,6 +91,28 @@ const tools = [
       out_path: z.string().optional(),
     }),
     handler: (a) => diarize.planSpeakerCuts(a),
+  },
+  {
+    name: "plan_silence_cuts",
+    description:
+      "Find silences between spoken words in an interview and emit a cut plan (ranges to DELETE). " +
+      "Takes either a WhisperX transcript.json or a video file (will be transcribed). Padding " +
+      "(0.05s inward on each cut) is applied by default. Single-speaker interviews — for multi-speaker, " +
+      "use diarize_interview + plan_speaker_cuts instead. No HF_TOKEN required.",
+    schema: z.object({
+      source: z.string(),
+      out_path: z.string().optional(),
+      transcript_out: z.string().optional(),
+      whisper_model: z.string().optional(),
+      min_gap: z.number().nonnegative().optional(),
+      merge_gap: z.number().nonnegative().optional(),
+      pad_start: z.number().nonnegative().optional(),
+      pad_end: z.number().nonnegative().optional(),
+      min_cut_duration: z.number().nonnegative().optional(),
+      cut_leading: z.boolean().optional(),
+      cut_trailing: z.boolean().optional(),
+    }),
+    handler: (a) => diarize.planSilenceCuts(a),
   },
   // ── editorial ──
   {
