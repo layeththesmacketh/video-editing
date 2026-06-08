@@ -191,6 +191,69 @@ def test_no_kept_speakers_cuts_everything_that_speaks():
 
 # --- speaker_breakdown -----------------------------------------------------
 
+def test_preserve_interjections_short_yep_between_kept_is_kept():
+    """A short 'Yep' from a non-kept speaker landing between two Deja ranges
+    should NOT be cut by default."""
+    d = diarized([
+        (0, 10, "SPEAKER_00"),
+        (10.3, 10.8, "SPEAKER_01"),     # short interjection
+        (11.0, 20, "SPEAKER_00"),
+    ], duration=20)
+    plan = plan_speaker_cuts(d, ["SPEAKER_00"])
+    assert plan["summary"]["cut_count"] == 0
+    assert plan["summary"]["preserved_interjection_count"] == 1
+
+
+def test_preserve_interjections_off_cuts_the_yep():
+    d = diarized([
+        (0, 10, "SPEAKER_00"),
+        (10.3, 10.8, "SPEAKER_01"),
+        (11.0, 20, "SPEAKER_00"),
+    ], duration=20)
+    plan = plan_speaker_cuts(d, ["SPEAKER_00"], preserve_interjections=False)
+    assert plan["summary"]["cut_count"] == 1
+
+
+def test_preserve_interjections_long_interruption_still_cut():
+    """A 3-second non-kept range between Deja ranges is NOT an interjection;
+    it still gets cut."""
+    d = diarized([
+        (0, 10, "SPEAKER_00"),
+        (10.5, 13.5, "SPEAKER_01"),    # 3s — too long
+        (14, 20, "SPEAKER_00"),
+    ], duration=20)
+    plan = plan_speaker_cuts(d, ["SPEAKER_00"], max_interjection_duration=1.0)
+    assert plan["summary"]["cut_count"] == 1
+
+
+def test_preserve_interjections_not_sandwiched_still_cut():
+    """A short non-kept range NOT sandwiched between kept ranges is cut."""
+    d = diarized([
+        (0, 10, "SPEAKER_00"),
+        (10.1, 10.6, "SPEAKER_01"),    # short
+        # no SPEAKER_00 after — this is not an interjection
+        (11, 20, "SPEAKER_01"),        # long SPEAKER_01 follows
+    ], duration=20)
+    plan = plan_speaker_cuts(d, ["SPEAKER_00"])
+    # The 0.5s "Mhm" is not sandwiched; it should be cut as part of the
+    # surrounding SPEAKER_01 block.
+    assert plan["summary"]["cut_count"] >= 1
+
+
+def test_preserve_interjections_window_too_far_still_cut():
+    """If the gap before/after exceeds the window, the short range is not
+    treated as an interjection."""
+    d = diarized([
+        (0, 10, "SPEAKER_00"),
+        # 5s gap of silence here
+        (15, 15.5, "SPEAKER_01"),
+        # 5s gap of silence here
+        (20.5, 30, "SPEAKER_00"),
+    ], duration=30)
+    plan = plan_speaker_cuts(d, ["SPEAKER_00"], interjection_window=2.0)
+    assert plan["summary"]["cut_count"] == 1
+
+
 def test_speaker_breakdown_ranks_by_talk_time():
     d = {
         "duration": 100.0,

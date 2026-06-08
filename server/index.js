@@ -75,12 +75,28 @@ const tools = [
     handler: (a) => diarize.diarizeInterview(a),
   },
   {
+    name: "parse_resolve_transcript",
+    description:
+      "Parse a DaVinci Resolve transcription .txt export (which DOES include speaker labels, " +
+      "unlike SRT/TTML exports) into the same diarized.json shape that diarize_interview produces. " +
+      "Use this when the editor has already run Resolve's Audio Transcription with Speaker Detection " +
+      "and exported the transcript — it's the most accurate path because the editor can fix " +
+      "misattributions in Resolve's UI before exporting.",
+    schema: z.object({
+      transcript_txt: z.string(),
+      out_dir: z.string(),
+      rate: z.number().positive().optional(),
+    }),
+    handler: (a) => diarize.parseResolveTranscript(a),
+  },
+  {
     name: "plan_speaker_cuts",
     description:
       "Given a diarized.json and which speakers to KEEP, emit a cut plan (timeline ranges to DELETE). " +
-      "Silences and kept-speaker ranges are preserved. Padding (0.05s inward on each cut) is applied " +
-      "by default so the kept speaker's adjacent words don't get clipped. Use this output to drive " +
-      "davinci-resolve-mcp's split/delete operations on the active timeline.",
+      "Silences and kept-speaker ranges are preserved. By default, SHORT INTERJECTIONS (<=1s) from " +
+      "non-kept speakers landing between two kept-speaker ranges are also preserved — this handles " +
+      "natural 'Mhm'/'Yep' acknowledgments without producing micro-cuts. Padding (0.05s inward on " +
+      "each cut) is applied by default so adjacent words aren't clipped.",
     schema: z.object({
       diarized_path: z.string(),
       keep: z.array(z.string()).min(1),
@@ -88,6 +104,9 @@ const tools = [
       pad_start: z.number().nonnegative().optional(),
       pad_end: z.number().nonnegative().optional(),
       min_cut_duration: z.number().nonnegative().optional(),
+      preserve_interjections: z.boolean().optional(),
+      max_interjection_duration: z.number().nonnegative().optional(),
+      interjection_window: z.number().nonnegative().optional(),
       out_path: z.string().optional(),
     }),
     handler: (a) => diarize.planSpeakerCuts(a),

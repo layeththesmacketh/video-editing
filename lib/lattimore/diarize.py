@@ -218,6 +218,9 @@ def plan_speaker_cuts(
     pad_start: float = 0.0,
     pad_end: float = 0.0,
     min_cut_duration: float = 0.1,
+    preserve_interjections: bool = True,
+    max_interjection_duration: float = 1.0,
+    interjection_window: float = 2.0,
 ) -> dict[str, Any]:
     """Given a diarized transcript and which speakers to KEEP, return the
     timeline ranges to DELETE.
@@ -226,26 +229,22 @@ def plan_speaker_cuts(
     inside it. Silences (no speaker active anywhere) are PRESERVED.
 
     Args:
-        diarized: output of `diarize_interview()`. Only needs `diarization`
-                  and `duration`.
-        keep_speakers: list of speaker labels (e.g. ["SPEAKER_00"]). Anything
-                  not in this set becomes a candidate for cutting.
+        diarized: output of `diarize_interview()` or `parse_resolve_transcript()`.
+                  Only needs `diarization` and `duration`.
+        keep_speakers: list of speaker labels. Anything not in this set becomes
+                  a candidate for cutting.
         merge_gap: cuts separated by <= this many seconds are merged into one.
         pad_start, pad_end: inward trim on each cut, to avoid clipping the
                   kept speaker's adjacent breath or first/last phoneme.
         min_cut_duration: drop cuts shorter than this after padding/merging.
-
-    Returns:
-        {
-          "keep_speakers": [...],
-          "cuts": [{"start": float, "end": float, "speakers": ["SPEAKER_01"]}, ...],
-          "summary": {
-            "original_duration": float,
-            "cut_duration": float,
-            "kept_duration": float,
-            "cut_count": int,
-          }
-        }
+        preserve_interjections: if True, short non-kept speaker ranges that
+                  land between two kept-speaker ranges are TREATED AS KEPT
+                  (not cut). This handles "Mhm", "Yep" etc. interrupting the
+                  main speaker without producing micro-cuts.
+        max_interjection_duration: a non-kept range qualifies as an
+                  interjection only if it is no longer than this many seconds.
+        interjection_window: a non-kept range is "between kept" only if there
+                  is a kept-speaker range within this window before AND after.
     """
     diarization: list[dict[str, Any]] = diarized.get("diarization", [])
     duration: float = float(diarized.get("duration", 0.0))
@@ -254,10 +253,25 @@ def plan_speaker_cuts(
     keep_ranges = _merge_overlapping(
         [(r["start"], r["end"]) for r in diarization if r["speaker"] in keep_set]
     )
+
+    other_diarization: list[dict[str, Any]] = [
+        r for r in diarization if r["speaker"] not in keep_set
+    ]
+    preserved_interjections: list[dict[str, Any]] = []
+    if preserve_interjections and max_interjection_duration > 0 and keep_ranges:
+        filtered: list[dict[str, Any]] = []
+        for r in other_diarization:
+            dur = r["end"] - r["start"]
+            if dur <= max_interjection_duration and _is_sandwiched_by_kept(
+                r["start"], r["end"], keep_ranges, interjection_window
+            ):
+                preserved_interjections.append(r)
+                continue
+            filtered.append(r)
+        other_diarization = filtered
+
     other_ranges_by_speaker: dict[str, list[tuple[float, float]]] = {}
-    for r in diarization:
-        if r["speaker"] in keep_set:
-            continue
+    for r in other_diarization:
         other_ranges_by_speaker.setdefault(r["speaker"], []).append((r["start"], r["end"]))
     other_ranges = _merge_overlapping(
         [span for spans in other_ranges_by_speaker.values() for span in spans]
@@ -295,11 +309,20 @@ def plan_speaker_cuts(
     return {
         "keep_speakers": list(keep_speakers),
         "cuts": cuts,
+        "preserved_interjections": [
+            {
+                "start": round(r["start"], 3),
+                "end": round(r["end"], 3),
+                "speaker": r["speaker"],
+            }
+            for r in preserved_interjections
+        ],
         "summary": {
             "original_duration": round(duration, 2),
             "cut_duration": round(cut_duration, 2),
             "kept_duration": round(max(duration - cut_duration, 0.0), 2),
             "cut_count": len(cuts),
+            "preserved_interjection_count": len(preserved_interjections),
         },
     }
 
@@ -337,6 +360,25 @@ def _subtract(
         if not pieces:
             return []
     return pieces
+
+
+def _is_sandwiched_by_kept(
+    start: float,
+    end: float,
+    kept_ranges: list[tuple[float, float]],
+    window: float,
+) -> bool:
+    """True if a kept-speaker range ends within `window` BEFORE `start` AND
+    another kept-speaker range starts within `window` AFTER `end`."""
+    has_before = any(
+        k_end <= start and (start - k_end) <= window
+        for _, k_end in kept_ranges
+    )
+    has_after = any(
+        k_start >= end and (k_start - end) <= window
+        for k_start, _ in kept_ranges
+    )
+    return has_before and has_after
 
 
 def _speakers_in_range(

@@ -1,0 +1,107 @@
+{
+  "duration": 1678.0,
+  "speech_duration": 1471.0,
+  "silence_duration": 207.0,
+  "speakers": [
+    {
+      "label": "Speaker 1",
+      "total_seconds": 700.12,
+      "share_of_speech": 0.476,
+      "share_of_total": 0.417,
+      "first_appearance": 0.0,
+      "last_appearance": 1666.92,
+      "sample_quotes": [
+        {
+          "start": 0.0,
+          "end": 4.166666666666667,
+          "text": "back knowing even when you don't feel like you're your best, that person will make up the distance."
+        },
+        {
+          "start": 7.583333333333333,
+          "end": 12.708333333333334,
+          "text": "I know, I know. But I was like, you know what? This is gonna be teamwork, so we'll be fine."
+        },
+        {
+          "start": 16.166666666666668,
+          "end": 17.666666666666668,
+          "text": "We have to do this talk now."
+        }
+      ]
+    },
+    {
+      "label": "Speaker 2",
+      "total_seconds": 591.83,
+      "share_of_speech": 0.402,
+      "share_of_total": 0.353,
+      "first_appearance": 4.17,
+      "last_appearance": 1678.0,
+      "sample_quotes": [
+        {
+          "start": 4.166666666666667,
+          "end": 7.583333333333333,
+          "text": "I will. I didn't know you had a banana to sleep, but I still wanted to text you."
+        },
+        {
+          "start": 12.708333333333334,
+          "end": 16.166666666666668,
+          "text": "And we're like 90% there right now."
+        },
+        {
+          "start": 17.666666666666668,
+          "end": 49.75,
+          "text": "All you have to do is talk. All you have to do is talk. No pressure, no pressure. Well, I'll take the compliment. I'm honored that you answered my answer. No, it's a request I come to. Actually, no, c"
+        }
+      ]
+    },
+    {
+      "label": "Speaker 4",
+      "total_seconds": 163.75,
+      "share_of_speech": 0.111,
+      "share_of_total": 0.098,
+      "first_appearance": 78.38,
+      "last_appearance": 1587.0,
+      "sample_quotes": [
+        {
+          "start": 78.375,
+          "end": 80.875,
+          "text": "We gotta do it now. So that back's in here, right?"
+        },
+        {
+          "start": 81.95833333333333,
+          "end": 83.0,
+          "text": "That back is in here? Yeah."
+        },
+        {
+          "start": 143.5,
+          "end": 146.16666666666666,
+          "text": "Oh my God, I've just noticed this too in there. How beautiful."
+        }
+      ]
+    },
+    {
+      "label": "Speaker 3",
+      "total_seconds": 15.29,
+      "share_of_speech": 0.01,
+      "share_of_total": 0.009,
+      "first_appearance": 76.46,
+      "last_appearance": 1466.96,
+      "sample_quotes": [
+        {
+          "start": 76.45833333333333,
+          "end": 76.875,
+          "text": "We're all hungry."
+        },
+        {
+          "start": 117.0,
+          "end": 117.66666666666667,
+          "text": "Do you have a pen today?"
+        },
+        {
+          "start": 155.75,
+          "end": 156.54166666666666,
+          "text": "Yep."
+        }
+      ]
+    }
+  ]
+}

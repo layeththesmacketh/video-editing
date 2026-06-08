@@ -57,6 +57,9 @@ export function planSpeakerCuts({
   pad_start = 0.05,
   pad_end = 0.05,
   min_cut_duration = 0.1,
+  preserve_interjections = true,
+  max_interjection_duration = 1.0,
+  interjection_window = 2.0,
   out_path,
 }) {
   if (!diarized_path) throw new Error("diarized_path required");
@@ -72,7 +75,10 @@ export function planSpeakerCuts({
     "--pad-start", String(pad_start),
     "--pad-end", String(pad_end),
     "--min-cut-duration", String(min_cut_duration),
+    "--max-interjection-duration", String(max_interjection_duration),
+    "--interjection-window", String(interjection_window),
   ];
+  if (!preserve_interjections) args.push("--no-preserve-interjections");
   if (out_path) args.push("--out", out_path);
 
   return {
@@ -81,6 +87,30 @@ export function planSpeakerCuts({
       args,
       cwd: REPO_ROOT,
       label: `speaker-cut keep=${keep.join(",")}`,
+    }),
+  };
+}
+
+export function parseResolveTranscript({
+  transcript_txt,
+  out_dir,
+  rate = 24.0,
+}) {
+  if (!transcript_txt) throw new Error("transcript_txt required");
+  if (!out_dir) throw new Error("out_dir required");
+
+  const args = [
+    "-m", "lattimore.cli", "parse-resolve",
+    transcript_txt, out_dir,
+    "--rate", String(rate),
+  ];
+
+  return {
+    jobId: createJob({
+      cmd: PYTHON,
+      args,
+      cwd: REPO_ROOT,
+      label: `parse-resolve ${path.basename(transcript_txt)}`,
     }),
   };
 }

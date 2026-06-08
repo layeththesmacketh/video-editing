@@ -1,0 +1,880 @@
+{
+  "keep_speakers": [
+    "Speaker 1"
+  ],
+  "cuts": [
+    {
+      "start": 4.217,
+      "end": 7.533,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 12.758,
+      "end": 16.117,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 17.717,
+      "end": 49.7,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 52.508,
+      "end": 64.408,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 76.508,
+      "end": 76.825,
+      "speakers": [
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 78.425,
+      "end": 82.95,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 85.383,
+      "end": 88.908,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 89.8,
+      "end": 90.95,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 108.55,
+      "end": 110.2,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 111.425,
+      "end": 131.825,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 134.133,
+      "end": 156.492,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 157.675,
+      "end": 172.117,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 188.925,
+      "end": 194.075,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 195.675,
+      "end": 198.7,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 199.925,
+      "end": 205.325,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 208.55,
+      "end": 220.117,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 239.383,
+      "end": 254.158,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 269.3,
+      "end": 272.283,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 274.842,
+      "end": 283.992,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 285.175,
+      "end": 293.617,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 295.092,
+      "end": 298.867,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 300.675,
+      "end": 303.95,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 306.133,
+      "end": 311.7,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 313.717,
+      "end": 314.325,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 315.467,
+      "end": 323.825,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 327.383,
+      "end": 327.492,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 331.092,
+      "end": 353.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 354.55,
+      "end": 356.742,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 358.258,
+      "end": 360.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 365.342,
+      "end": 370.325,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 375.05,
+      "end": 381.408,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 385.508,
+      "end": 399.242,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 400.967,
+      "end": 445.2,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 557.633,
+      "end": 559.117,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 561.258,
+      "end": 562.617,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 564.258,
+      "end": 564.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 566.008,
+      "end": 568.283,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 570.008,
+      "end": 616.617,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 624.55,
+      "end": 629.117,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 630.3,
+      "end": 632.283,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 663.467,
+      "end": 666.742,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 670.133,
+      "end": 714.95,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 742.508,
+      "end": 744.325,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 746.758,
+      "end": 753.283,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 754.758,
+      "end": 764.533,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 765.758,
+      "end": 787.117,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 788.592,
+      "end": 793.825,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 798.758,
+      "end": 801.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 802.758,
+      "end": 828.283,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 829.675,
+      "end": 838.492,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 839.633,
+      "end": 840.908,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 931.3,
+      "end": 933.95,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 935.05,
+      "end": 937.367,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 938.05,
+      "end": 946.242,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 948.758,
+      "end": 958.825,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 960.133,
+      "end": 970.075,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 974.675,
+      "end": 994.283,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 995.467,
+      "end": 1002.7,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1008.425,
+      "end": 1009.117,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1011.675,
+      "end": 1018.033,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1032.758,
+      "end": 1040.742,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1042.342,
+      "end": 1042.45,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1043.717,
+      "end": 1046.867,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1049.425,
+      "end": 1057.492,
+      "speakers": [
+        "Speaker 3",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1058.717,
+      "end": 1061.7,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1063.675,
+      "end": 1072.575,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1083.508,
+      "end": 1087.408,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1088.508,
+      "end": 1091.408,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1093.342,
+      "end": 1094.158,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1095.842,
+      "end": 1096.617,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1097.717,
+      "end": 1098.117,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1101.883,
+      "end": 1102.867,
+      "speakers": [
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 1109.592,
+      "end": 1116.658,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1184.258,
+      "end": 1188.158,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1190.008,
+      "end": 1198.658,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1203.967,
+      "end": 1210.492,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1211.633,
+      "end": 1215.367,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1216.758,
+      "end": 1218.325,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1220.8,
+      "end": 1221.325,
+      "speakers": [
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 1224.592,
+      "end": 1225.575,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1226.883,
+      "end": 1232.158,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1236.675,
+      "end": 1250.158,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1251.342,
+      "end": 1255.825,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1264.008,
+      "end": 1264.575,
+      "speakers": [
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 1295.383,
+      "end": 1297.658,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1298.758,
+      "end": 1303.867,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1306.05,
+      "end": 1307.7,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1308.925,
+      "end": 1309.825,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1314.008,
+      "end": 1314.117,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1315.508,
+      "end": 1322.158,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1331.467,
+      "end": 1337.783,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 1339.342,
+      "end": 1340.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1341.925,
+      "end": 1345.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1349.008,
+      "end": 1351.575,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1400.675,
+      "end": 1401.45,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1403.008,
+      "end": 1403.95,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1405.258,
+      "end": 1405.783,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1408.05,
+      "end": 1411.45,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1416.883,
+      "end": 1424.158,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1426.092,
+      "end": 1436.2,
+      "speakers": [
+        "Speaker 2",
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1443.842,
+      "end": 1446.908,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1466.8,
+      "end": 1466.908,
+      "speakers": [
+        "Speaker 3"
+      ]
+    },
+    {
+      "start": 1473.3,
+      "end": 1489.2,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1498.342,
+      "end": 1501.45,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1504.8,
+      "end": 1508.242,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1518.967,
+      "end": 1522.075,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1583.467,
+      "end": 1586.95,
+      "speakers": [
+        "Speaker 4"
+      ]
+    },
+    {
+      "start": 1591.633,
+      "end": 1592.825,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1598.55,
+      "end": 1601.367,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1602.175,
+      "end": 1607.908,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1619.008,
+      "end": 1620.408,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1670.175,
+      "end": 1673.408,
+      "speakers": [
+        "Speaker 2"
+      ]
+    },
+    {
+      "start": 1674.758,
+      "end": 1677.95,
+      "speakers": [
+        "Speaker 2"
+      ]
+    }
+  ],
+  "preserved_interjections": [
+    {
+      "start": 929.083,
+      "end": 929.292,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 929.292,
+      "end": 930.083,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1117.417,
+      "end": 1118.042,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1120.25,
+      "end": 1121.25,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1122.792,
+      "end": 1123.25,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1440.167,
+      "end": 1440.333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1622.792,
+      "end": 1623.667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1638.5,
+      "end": 1639.125,
+      "speaker": "Speaker 2"
+    }
+  ],
+  "summary": {
+    "original_duration": 1678.0,
+    "cut_duration": 754.54,
+    "kept_duration": 923.46,
+    "cut_count": 113,
+    "preserved_interjection_count": 8
+  }
+}

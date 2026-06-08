@@ -1,0 +1,3113 @@
+{
+  "clip": "/root/.claude/uploads/3a57185c-a480-5458-b8b8-54431d931c07/75612759-Dejha_LoHi_Commissioner_Interview_RAW.txt",
+  "language": "en",
+  "duration": 1678.0,
+  "speakers": [
+    "Speaker 1",
+    "Speaker 2",
+    "Speaker 3",
+    "Speaker 4"
+  ],
+  "diarization": [
+    {
+      "start": 0.0,
+      "end": 4.166666666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 4.166666666666667,
+      "end": 7.583333333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 7.583333333333333,
+      "end": 12.708333333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 12.708333333333334,
+      "end": 16.166666666666668,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 16.166666666666668,
+      "end": 17.666666666666668,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 17.666666666666668,
+      "end": 49.75,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 49.75,
+      "end": 52.458333333333336,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 52.458333333333336,
+      "end": 64.45833333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 64.45833333333333,
+      "end": 67.83333333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 69.04166666666667,
+      "end": 75.16666666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 76.45833333333333,
+      "end": 76.875,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 78.375,
+      "end": 80.875,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 80.875,
+      "end": 81.95833333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 81.95833333333333,
+      "end": 83.0,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 85.33333333333333,
+      "end": 88.95833333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 88.95833333333333,
+      "end": 89.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 89.75,
+      "end": 91.0,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 91.0,
+      "end": 104.58333333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 108.5,
+      "end": 110.25,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 111.375,
+      "end": 117.0,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 117.0,
+      "end": 117.66666666666667,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 117.66666666666667,
+      "end": 131.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 134.08333333333334,
+      "end": 143.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 143.5,
+      "end": 146.16666666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 146.16666666666666,
+      "end": 155.75,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 155.75,
+      "end": 156.54166666666666,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 157.625,
+      "end": 167.66666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 167.66666666666666,
+      "end": 168.16666666666666,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 168.16666666666666,
+      "end": 172.16666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 172.16666666666666,
+      "end": 175.91666666666666,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 176.91666666666666,
+      "end": 186.33333333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 187.375,
+      "end": 188.875,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 188.875,
+      "end": 194.125,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 195.625,
+      "end": 198.75,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 199.875,
+      "end": 205.375,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 206.5,
+      "end": 208.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 208.5,
+      "end": 220.16666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 220.16666666666666,
+      "end": 239.33333333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 239.33333333333334,
+      "end": 247.83333333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 247.83333333333334,
+      "end": 248.29166666666666,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 248.29166666666666,
+      "end": 254.20833333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 254.20833333333334,
+      "end": 269.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 269.25,
+      "end": 272.3333333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 274.7916666666667,
+      "end": 280.4166666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 280.4166666666667,
+      "end": 281.2916666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 281.2916666666667,
+      "end": 282.5,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 282.5,
+      "end": 283.5,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 283.5,
+      "end": 284.0416666666667,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 285.125,
+      "end": 290.8333333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 290.8333333333333,
+      "end": 291.5416666666667,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 291.5416666666667,
+      "end": 293.6666666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 295.0416666666667,
+      "end": 298.9166666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 300.625,
+      "end": 304.0,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 306.0833333333333,
+      "end": 311.75,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 313.6666666666667,
+      "end": 314.375,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 315.4166666666667,
+      "end": 315.625,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 315.625,
+      "end": 323.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 327.3333333333333,
+      "end": 327.5416666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 331.0416666666667,
+      "end": 353.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 354.5,
+      "end": 356.7916666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 358.2083333333333,
+      "end": 360.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 360.5,
+      "end": 365.2916666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 365.2916666666667,
+      "end": 370.375,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 370.375,
+      "end": 375.0,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 375.0,
+      "end": 379.4166666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 379.4166666666667,
+      "end": 380.0833333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 380.0833333333333,
+      "end": 381.4583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 381.4583333333333,
+      "end": 381.9583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 383.2916666666667,
+      "end": 385.4583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 385.4583333333333,
+      "end": 392.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 392.875,
+      "end": 393.8333333333333,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 393.8333333333333,
+      "end": 399.2916666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 400.9166666666667,
+      "end": 445.25,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 448.9166666666667,
+      "end": 451.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 454.25,
+      "end": 557.5833333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 557.5833333333334,
+      "end": 559.1666666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 561.2083333333334,
+      "end": 562.6666666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 562.6666666666666,
+      "end": 564.2083333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 564.2083333333334,
+      "end": 564.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 565.9583333333334,
+      "end": 568.3333333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 569.3333333333334,
+      "end": 569.9583333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 569.9583333333334,
+      "end": 616.6666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 619.0833333333334,
+      "end": 624.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 624.5,
+      "end": 626.4583333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 626.4583333333334,
+      "end": 629.1666666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 630.25,
+      "end": 632.3333333333334,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 634.0,
+      "end": 662.1666666666666,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 663.4166666666666,
+      "end": 665.9166666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 665.9166666666666,
+      "end": 666.7916666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 666.7916666666666,
+      "end": 668.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 670.0833333333334,
+      "end": 702.9583333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 702.9583333333334,
+      "end": 715.0,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 716.5833333333334,
+      "end": 740.6666666666666,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 742.4583333333334,
+      "end": 744.375,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 744.375,
+      "end": 746.7083333333334,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 746.7083333333334,
+      "end": 753.3333333333334,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 754.7083333333334,
+      "end": 759.4166666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 759.4166666666666,
+      "end": 764.5833333333334,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 765.7083333333334,
+      "end": 770.125,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 770.125,
+      "end": 774.5,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 774.5,
+      "end": 783.3333333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 783.3333333333334,
+      "end": 787.1666666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 788.5416666666666,
+      "end": 793.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 798.7083333333334,
+      "end": 801.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 802.7083333333334,
+      "end": 826.0833333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 826.0833333333334,
+      "end": 826.75,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 826.75,
+      "end": 828.3333333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 829.625,
+      "end": 838.5416666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 839.5833333333334,
+      "end": 840.9583333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 840.9583333333334,
+      "end": 928.0416666666666,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 929.0833333333334,
+      "end": 929.2916666666666,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 929.2916666666666,
+      "end": 930.0833333333334,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 930.0833333333334,
+      "end": 931.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 931.25,
+      "end": 934.0,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 935.0,
+      "end": 937.4166666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 937.4166666666666,
+      "end": 938.0,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 938.0,
+      "end": 946.2916666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 948.7083333333334,
+      "end": 955.5833333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 955.5833333333334,
+      "end": 957.75,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 957.75,
+      "end": 958.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 960.0833333333334,
+      "end": 970.125,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 971.4583333333334,
+      "end": 974.625,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 974.625,
+      "end": 977.6666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 977.6666666666666,
+      "end": 984.25,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 984.25,
+      "end": 992.7083333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 992.7083333333334,
+      "end": 993.5416666666666,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 993.5416666666666,
+      "end": 994.3333333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 995.4166666666666,
+      "end": 1000.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1000.5,
+      "end": 1002.75,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1004.0416666666666,
+      "end": 1004.125,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1006.125,
+      "end": 1006.2083333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1008.375,
+      "end": 1009.1666666666666,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1011.625,
+      "end": 1018.0833333333334,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1018.0833333333334,
+      "end": 1026.625,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1029.0,
+      "end": 1030.4583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1032.7083333333333,
+      "end": 1034.5416666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1034.5416666666667,
+      "end": 1035.4166666666667,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1035.4166666666667,
+      "end": 1040.7916666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1042.2916666666667,
+      "end": 1042.5,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1043.6666666666667,
+      "end": 1046.9166666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1049.375,
+      "end": 1054.1666666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1054.1666666666667,
+      "end": 1055.2083333333333,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1055.2083333333333,
+      "end": 1057.5416666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1058.6666666666667,
+      "end": 1061.75,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1063.625,
+      "end": 1072.625,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1072.625,
+      "end": 1079.625,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1083.4583333333333,
+      "end": 1085.5416666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1085.5416666666667,
+      "end": 1087.4583333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1088.4583333333333,
+      "end": 1091.4583333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1093.2916666666667,
+      "end": 1094.2083333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1095.7916666666667,
+      "end": 1096.6666666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1097.6666666666667,
+      "end": 1098.1666666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1098.1666666666667,
+      "end": 1101.8333333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1101.8333333333333,
+      "end": 1102.9166666666667,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1102.9166666666667,
+      "end": 1108.0833333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1109.5416666666667,
+      "end": 1111.7916666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1111.7916666666667,
+      "end": 1114.625,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1114.625,
+      "end": 1116.7083333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1116.7083333333333,
+      "end": 1117.4166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1117.4166666666667,
+      "end": 1118.0416666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1118.0416666666667,
+      "end": 1120.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1120.25,
+      "end": 1121.25,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1121.25,
+      "end": 1122.7916666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1122.7916666666667,
+      "end": 1123.25,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1124.625,
+      "end": 1160.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1163.9166666666667,
+      "end": 1184.2083333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1184.2083333333333,
+      "end": 1188.2083333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1189.9583333333333,
+      "end": 1195.1666666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1195.1666666666667,
+      "end": 1198.7083333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1200.0416666666667,
+      "end": 1201.9583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1202.875,
+      "end": 1203.9166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1203.9166666666667,
+      "end": 1210.5416666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1211.5833333333333,
+      "end": 1215.4166666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1216.7083333333333,
+      "end": 1218.375,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1218.375,
+      "end": 1220.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1220.75,
+      "end": 1221.375,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1224.5416666666667,
+      "end": 1225.625,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1226.8333333333333,
+      "end": 1232.2083333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1232.2083333333333,
+      "end": 1236.625,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1236.625,
+      "end": 1238.9583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1238.9583333333333,
+      "end": 1246.4166666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1246.4166666666667,
+      "end": 1250.2083333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1251.2916666666667,
+      "end": 1255.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1255.875,
+      "end": 1257.5416666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1258.7916666666667,
+      "end": 1259.0,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1262.0416666666667,
+      "end": 1262.7916666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1263.9583333333333,
+      "end": 1264.625,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1267.4166666666667,
+      "end": 1293.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1295.3333333333333,
+      "end": 1297.7083333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1298.7083333333333,
+      "end": 1301.0,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1301.0,
+      "end": 1303.9166666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1306.0,
+      "end": 1307.75,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1308.875,
+      "end": 1309.0416666666667,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1309.0416666666667,
+      "end": 1309.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1313.9583333333333,
+      "end": 1314.1666666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1315.4583333333333,
+      "end": 1322.2083333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1324.9166666666667,
+      "end": 1325.0416666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1325.0416666666667,
+      "end": 1331.4166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1331.4166666666667,
+      "end": 1337.25,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1337.25,
+      "end": 1337.8333333333333,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1339.2916666666667,
+      "end": 1340.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1341.875,
+      "end": 1345.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1347.5,
+      "end": 1348.9583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1348.9583333333333,
+      "end": 1351.625,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1352.9583333333333,
+      "end": 1394.4583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1395.5,
+      "end": 1400.625,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1400.625,
+      "end": 1401.5,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1402.9583333333333,
+      "end": 1404.0,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1405.2083333333333,
+      "end": 1405.8333333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1408.0,
+      "end": 1411.5,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1411.5,
+      "end": 1416.8333333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1416.8333333333333,
+      "end": 1424.2083333333333,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1426.0416666666667,
+      "end": 1426.375,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1426.375,
+      "end": 1436.25,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1437.375,
+      "end": 1438.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1440.1666666666667,
+      "end": 1440.3333333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1440.3333333333333,
+      "end": 1442.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1443.7916666666667,
+      "end": 1446.9583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1450.7083333333333,
+      "end": 1464.375,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1466.75,
+      "end": 1466.9583333333333,
+      "speaker": "Speaker 3"
+    },
+    {
+      "start": 1470.5416666666667,
+      "end": 1471.9166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1473.0,
+      "end": 1473.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1473.25,
+      "end": 1489.25,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1489.25,
+      "end": 1492.5833333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1493.875,
+      "end": 1498.2916666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1498.2916666666667,
+      "end": 1501.5,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1501.5,
+      "end": 1504.75,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1504.75,
+      "end": 1508.2916666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1510.5833333333333,
+      "end": 1511.0,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1513.7916666666667,
+      "end": 1514.3333333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1518.9166666666667,
+      "end": 1522.125,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1522.125,
+      "end": 1524.0833333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1527.6666666666667,
+      "end": 1583.4166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1583.4166666666667,
+      "end": 1587.0,
+      "speaker": "Speaker 4"
+    },
+    {
+      "start": 1587.0,
+      "end": 1591.5833333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1591.5833333333333,
+      "end": 1592.875,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1592.875,
+      "end": 1598.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1598.5,
+      "end": 1601.4166666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1601.4166666666667,
+      "end": 1602.125,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1602.125,
+      "end": 1607.9583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1609.0416666666667,
+      "end": 1614.25,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1615.5,
+      "end": 1618.9583333333333,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1618.9583333333333,
+      "end": 1620.4583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1620.4583333333333,
+      "end": 1622.7916666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1622.7916666666667,
+      "end": 1623.6666666666667,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1623.6666666666667,
+      "end": 1638.5,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1638.5,
+      "end": 1639.125,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1639.125,
+      "end": 1666.9166666666667,
+      "speaker": "Speaker 1"
+    },
+    {
+      "start": 1670.125,
+      "end": 1673.4583333333333,
+      "speaker": "Speaker 2"
+    },
+    {
+      "start": 1674.7083333333333,
+      "end": 1678.0,
+      "speaker": "Speaker 2"
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.166666666666667,
+      "text": "back knowing even when you don't feel like you're your best, that person will make up the distance.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 4.166666666666667,
+      "end": 7.583333333333333,
+      "text": "I will. I didn't know you had a banana to sleep, but I still wanted to text you.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 7.583333333333333,
+      "end": 12.708333333333334,
+      "text": "I know, I know. But I was like, you know what? This is gonna be teamwork, so we'll be fine.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 12.708333333333334,
+      "end": 16.166666666666668,
+      "text": "And we're like 90% there right now.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 16.166666666666668,
+      "end": 17.666666666666668,
+      "text": "We have to do this talk now.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 17.666666666666668,
+      "end": 49.75,
+      "text": "All you have to do is talk. All you have to do is talk. No pressure, no pressure. Well, I'll take the compliment. I'm honored that you answered my answer. No, it's a request I come to. Actually, no, checkmate. We're coming to you first. Which also for me, I'm sure it would've come to you last. I'm developing this right now, but who better to crystallize this with and this is gonna set the tone for all the other talks, all the interviews that we're gonna do, make. So it is what it had to be.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 49.75,
+      "end": 52.458333333333336,
+      "text": "This is my way of just saying thank you, all of you.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 52.458333333333336,
+      "end": 64.45833333333333,
+      "text": "Thank you. Our pleasure, really. For having us. And thank you for thinking a little high, dropping our name into the bucket when it came to Nine Foundation, amplifying what's about to go down.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 64.45833333333333,
+      "end": 67.83333333333333,
+      "text": "Yeah, well, I think it's that ecosystem work.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 69.04166666666667,
+      "end": 75.16666666666667,
+      "text": "You have to work with people who are also developing their own ideas and their own voices. I think that's the only way.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 76.45833333333333,
+      "end": 76.875,
+      "text": "We're all hungry.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 78.375,
+      "end": 78.375,
+      "text": "(Claps)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 78.375,
+      "end": 80.875,
+      "text": "We gotta do it now. So that back's in here, right?",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 80.875,
+      "end": 81.95833333333333,
+      "text": "Excuse me?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 81.95833333333333,
+      "end": 83.0,
+      "text": "That back is in here? Yeah.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 85.33333333333333,
+      "end": 88.95833333333333,
+      "text": "Yeah, I like to think we're all on the same team.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 88.95833333333333,
+      "end": 89.75,
+      "text": "Definitely.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 89.75,
+      "end": 91.0,
+      "text": "Yeah, for sure.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 91.0,
+      "end": 104.58333333333333,
+      "text": "And you never know who you're gonna work with, but you know when the opportunities come, oh, the alignment here. So it's like we're all in each other's lives, not like transactionally. No, but like it's right now. But then sometimes it's like, oh, I actually have a person.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 106.5,
+      "end": 106.95833333333333,
+      "text": "(Claps)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 108.5,
+      "end": 110.25,
+      "text": "Dream brief, dream brief.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 111.375,
+      "end": 117.0,
+      "text": "Starting my day at museums, at Tisha's house, not next to that tunnel, like Monday.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 117.0,
+      "end": 117.66666666666667,
+      "text": "Do you have a pen today?",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 117.66666666666667,
+      "end": 131.875,
+      "text": "We started this morning doing some B-roll. Sorry, I'm very sorry. Yeah, doing B-roll, because we speak about how like, we want the collectors, we're gonna have collectors' homes and we wanna make them think of like, your home can hold memory of a city, not just to museums.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 134.08333333333334,
+      "end": 143.5,
+      "text": "So we're not talking bad about museums, we're just saying and, museums and, you're living room, museums and your gallery wall in your dining room.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 143.5,
+      "end": 146.16666666666666,
+      "text": "Oh my God, I've just noticed this too in there. How beautiful.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 146.16666666666666,
+      "end": 155.75,
+      "text": "No, this is, but like each of these pieces, like she was just talking about the hair pick and like, everything has a story and like, if you're lucky enough, you know the artists that you collect.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 155.75,
+      "end": 156.54166666666666,
+      "text": "Yep.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 157.625,
+      "end": 167.66666666666666,
+      "text": "Priceless. Doesn't matter what the art market says it's worth, it's like, I know this artist, I fuck with this artist. They seem to like me enough, you know?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 167.66666666666666,
+      "end": 168.16666666666666,
+      "text": "Yeah.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 168.16666666666666,
+      "end": 172.16666666666666,
+      "text": "And that's a richer experience of life.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 172.16666666666666,
+      "end": 175.91666666666666,
+      "text": "Yeah, like everything becomes an artifact of your experience.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 176.91666666666666,
+      "end": 186.33333333333334,
+      "text": "Like it's like every time you look at a piece, it's not just the piece that is really required of it, the connections you made, the friendships, like the whole path. Well, you had that with Beatrice.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 187.375,
+      "end": 188.875,
+      "text": "Like you commissioned her.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 188.875,
+      "end": 194.125,
+      "text": "And Lauren, I worked with her for Loja, I got onto her through commission. Amazing.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 195.625,
+      "end": 198.75,
+      "text": "And Lee, I mean, again, I knew these artists,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 199.875,
+      "end": 205.375,
+      "text": "the fact that once I got a commission at a piece, it was like a reach in for me to reach out to them again. And then I'm like, actually, we're gonna do the next issue of the magazine.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 206.5,
+      "end": 208.5,
+      "text": "Yeah, that's how it happens.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 208.5,
+      "end": 220.16666666666666,
+      "text": "I don't know if all the artists, if all the collectors are trying to be friends with the artists or vice, or that the artists want to be friends with all the collectors, that's not the point. The point is that it happens when it happens and then it's like--",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 220.16666666666666,
+      "end": 239.33333333333334,
+      "text": "And then also there's this feeling like sometimes people are talking about you in rooms that you don't even know, you'll never know. I know people are saying or dropping your names in rooms but you have no idea. And then 10 years later where you'll find out, oh, there's like five connections that happened that got me here. So I have a feeling that's also kind",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 239.33333333333334,
+      "end": 247.83333333333334,
+      "text": "of-- Yeah, yeah, even if you knew this person through commission or you went to their studio for a studio visit and then they happen to be one of the commissioned artists and then nothing happens for 10 years.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 247.83333333333334,
+      "end": 248.29166666666666,
+      "text": "Yeah.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 248.29166666666666,
+      "end": 254.20833333333334,
+      "text": "But there's pieces in your living room and then the whole conversation sparks up and next thing you know.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 254.20833333333334,
+      "end": 269.25,
+      "text": "You never know. You never know but that's I think the point of collecting without having a transaction or evaluation of somebody's labor and you're actually just doing it for memory, for the culture, for human experience. We should have gone all this on camera.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 269.25,
+      "end": 272.3333333333333,
+      "text": "We did. We did? Yeah, it's all done right there. Sure.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 273.3333333333333,
+      "end": 274.7916666666667,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 274.7916666666667,
+      "end": 280.4166666666667,
+      "text": "Did you say that? Rookie. Did you say that? No, but why would you do this? I thought you were over here jiggling and jangling.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 280.4166666666667,
+      "end": 281.2916666666667,
+      "text": "No. Me too.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 281.2916666666667,
+      "end": 282.5,
+      "text": "That was so good.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 282.5,
+      "end": 283.5,
+      "text": "You got the sneaky moments.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 283.5,
+      "end": 284.0416666666667,
+      "text": "Oh.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 285.125,
+      "end": 290.8333333333333,
+      "text": "It's like Scorsese said never stop recording. Yeah. It's like when you finish the cut, not like, you'll get the line.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 290.8333333333333,
+      "end": 291.5416666666667,
+      "text": "Yeah.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 291.5416666666667,
+      "end": 293.6666666666667,
+      "text": "We got a lot though. Okay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 295.0416666666667,
+      "end": 298.9166666666667,
+      "text": "Well, let's see, let's get started. When Nick already started.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 300.625,
+      "end": 304.0,
+      "text": "Well we can do a little something here just to give a nice big clap.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 306.0833333333333,
+      "end": 311.75,
+      "text": "We're good. Okay. That was it. We're still going. That was a real clap. It was a perfect clap. Wow. Do you feel the cross?",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 313.5833333333333,
+      "end": 313.6666666666667,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 313.6666666666667,
+      "end": 314.375,
+      "text": "Yay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 315.4166666666667,
+      "end": 315.625,
+      "text": "Okay.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 315.625,
+      "end": 323.875,
+      "text": "Okay, so keep your direction towards me because you have this beautiful light coming in from outside and we're not gonna be talking or using the sandwich.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 327.3333333333333,
+      "end": 327.5416666666667,
+      "text": "Oh.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 331.0416666666667,
+      "end": 353.5,
+      "text": "Okay, so we all gathered here today to talk about Commissioner and the methodology that we're gonna put people onto. So to speak to the home museum memory and what Commissioner is doing. So after our, oh, we have one little wire.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 354.5,
+      "end": 356.7916666666667,
+      "text": "That's just the earth. There's no wire. There's no wire though.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 358.2083333333333,
+      "end": 360.5,
+      "text": "She's got enough hair. It's covering it.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 360.5,
+      "end": 365.2916666666667,
+      "text": "That was another concern. Would it get big enough? Was there enough humidity? No.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 365.2916666666667,
+      "end": 370.375,
+      "text": "I feel like a please, please. Just walk outside, we walk outside for 30 seconds. We'll get enough humidity.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 370.375,
+      "end": 375.0,
+      "text": "That's what I did. Oh my God. I washed it and then I had to walk around the block to just--",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 375.0,
+      "end": 379.4166666666667,
+      "text": "And I ended firing off emails. I'm doing my hair walk.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 379.4166666666667,
+      "end": 380.0833333333333,
+      "text": "Oh my God.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 380.0833333333333,
+      "end": 381.4583333333333,
+      "text": "Doing my hair walk.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 381.4583333333333,
+      "end": 381.9583333333333,
+      "text": "So angry.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 383.2916666666667,
+      "end": 385.4583333333333,
+      "text": "Should I start talking?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 385.4583333333333,
+      "end": 392.875,
+      "text": "Hold on. We're waiting for, I'm waiting for the all cleaner. We're good. Okay, with a wrapper too. You're gonna do that to me?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 392.875,
+      "end": 393.8333333333333,
+      "text": "Mm-hmm.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 393.8333333333333,
+      "end": 399.2916666666667,
+      "text": "Do your questions. Okay, so I'm gonna bring it back. Now we're starting. Okay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 400.9166666666667,
+      "end": 445.25,
+      "text": "Talk through how art is a language, how art holds history, how commissioners creating the ecosystem that brings that history into collector's homes, and how, and it's the friendships, right? I love that sentiment of it's not the transactional nature of the art world, it's more than that. You now live with memory, you now live with history, and you have a story to share with your, I mean, it's just the joy of living with art. It's hard to put that into a dictionary definition, but how it enriches your life to live with art, and how that relationship is enriched when you know the artist. You get to go to their studio, and follow their career for a couple years and see them pop off, and go to the Venice Biennale.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 448.9166666666667,
+      "end": 451.75,
+      "text": "Okay, all right, I'll just start talking then.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 454.25,
+      "end": 557.5833333333334,
+      "text": "One of the things that really inspires me is the opportunity to have a creative life, and to think about how we can engage the world with art. And part of that is having relationships with our communities, and having relationships with artists, and really thinking more deeply about the labor and the ideas that inform everything we see in the world around us. So to my mind, collecting art ends up becoming an archive, or rather a way to decentralize memory. I grew up going into museums, I grew up going to institutions, and learning about the history of these spaces, but I couldn't help but think, there's a broader history, and a lot of that history unfolds as stories told at the kitchen table, or in the living room. And what if we all had access to artworks, and to artists in the same way that these institutions do? And inspired by models like Charles White, or Diego Garcia, or even women's circles of long created collaborative ways of funding their dreams. How could we, as a community, think about decentralizing memory, and really participating as stakeholders in the story of Miami, in the story of our space. And that's really where Commissioner comes along. It gives everybody an opportunity to become a collector in their own right. What I have found is often people are doing the practice, but because they think they don't have financial access, or they don't have the right home for it, or they're not there yet, they don't necessarily step into the role. And I think everybody can become a collector, and Commissioner is there to help them do that.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 557.5833333333334,
+      "end": 559.1666666666666,
+      "text": "That was amazing.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 561.2083333333334,
+      "end": 562.6666666666666,
+      "text": "Okay, bye. Bye bye.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 562.6666666666666,
+      "end": 564.2083333333334,
+      "text": "Okay, great, I was like, \"Are we done?\"",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 564.2083333333334,
+      "end": 564.5,
+      "text": "It's around.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 565.9583333333334,
+      "end": 568.3333333333334,
+      "text": "I gotta be like, I gotta, I gotta, I gotta one o'clock.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 569.3333333333334,
+      "end": 569.9583333333334,
+      "text": "Is that okay?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 569.9583333333334,
+      "end": 616.6666666666666,
+      "text": "That was fantastic. I think there's an opportunity to walk around your house, and you speak through a couple pieces, but before we do that, I want you to speak to, give us a shorter chapter of just living with art at home, and speaking like, right here. Like, this is, like you spoke to, I don't have the right home, and I don't have the access, but it can be approachable. Speak to how Commissioner creates an opportunity for access that's approach, I mean, access and approachable is kind of a synonym, but I think access is a bit of like a loaded word, and very academic, so I think, speak more humanly about it, like the intimidating nature, and how you break, how it's broken down, how Commissioner creates a space that's friendlier, and warmer, and more welcoming than maybe a white cube gallery or museum.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 619.0833333333334,
+      "end": 624.5,
+      "text": "I wanna think about how I'm gonna say that. All right, I'm just gonna try talking.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 624.5,
+      "end": 626.4583333333334,
+      "text": "Yeah, just go off, and we'll find magic.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 626.4583333333334,
+      "end": 629.1666666666666,
+      "text": "This is where Crystal Stanley, and editing lives with editor, can like,",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 630.25,
+      "end": 632.3333333333334,
+      "text": "figure out ways to kind of like, trim it down.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 634.0,
+      "end": 662.1666666666666,
+      "text": "I think a lot of the time, we don't see ourselves as a collector, because the narrative on who a collector is, or who gets access to artwork feels very far from us, and at the end of the day, art is not a privilege. It's all around us, everybody should have the ability to collect it, to be part of it, to create it, and that's the point of Commissioner. It's giving people more opportunities to be part of this collective story that we make together.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 663.4166666666666,
+      "end": 665.9166666666666,
+      "text": "You come over a little bit more, I just wanna see her ally a little bit.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 665.9166666666666,
+      "end": 666.7916666666666,
+      "text": "And then--",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 666.7916666666666,
+      "end": 668.5,
+      "text": "Is that too esoteric?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 670.0833333333334,
+      "end": 702.9583333333334,
+      "text": "I think-- A little bit more granular? I think when I say granular, I want it to be more like, relaxed. More granular. Because I think of someone who's not, now, I know that half of the audience are more relaxed. No, what I mean is, think of the audience that's less art world adjacent, and I get you could be working in arts and culture, not consider yourself the definition of a collector, but imagine someone who's one degree outside of arts and culture, then that's even a higher wall to climb, a bigger hurdle to, whoa, I don't know, I work at an accounting firm, or I work in--",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 702.9583333333334,
+      "end": 715.0,
+      "text": "Okay, I think that-- One second, Anisha, and then, can you turn your head a little bit more left? Not so crazy, but I just don't want you looking like this, just to see the whites of your eyes, so just even out. Yeah, there you go, perfect.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 716.5833333333334,
+      "end": 740.6666666666666,
+      "text": "Okay, I think, what do I think? I think that commissioner makes collecting art possible for people who never even saw themselves as collectors, through learning, through experiences in people's homes, studio visits, we're really pulling back the curtain on what it means to make art, and just by virtue of doing that, of understanding this human experience, we're inviting more people to become a collector in their own right.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 742.4583333333334,
+      "end": 744.375,
+      "text": "Fine, that was it, that was it.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 744.375,
+      "end": 746.7083333333334,
+      "text": "Thank you for coaching that. Of course.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 746.7083333333334,
+      "end": 753.3333333333334,
+      "text": "Perfect. Maybe run the first one again, with just a different head position, just so we have also variations as well. Okay.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 754.7083333333334,
+      "end": 759.4166666666666,
+      "text": "So, when you say a different head position, do you want her to make an angle for probably a little bit different? She did it already. Oh, she already did.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 759.4166666666666,
+      "end": 764.5833333333334,
+      "text": "That was me, just that little adjustment we did. So you want the first feel. Then let's see if I have more questions, we can keep going, circle back again.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 765.7083333333334,
+      "end": 770.125,
+      "text": "Yeah, I do have other questions. Do you feel like we got it that first time?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 770.125,
+      "end": 774.5,
+      "text": "It just looks a little bit different, but it's all, but it's not a big, I don't think it's an issue.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 774.5,
+      "end": 783.3333333333334,
+      "text": "We're not gonna use, a lot of it would be cut for voiceover only, it's not like we're gonna have a long video of Deja, so the audio,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 783.3333333333334,
+      "end": 787.1666666666666,
+      "text": "it's not like the audio is good. Yeah, it's great, I mean the visual is great too.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 788.5416666666666,
+      "end": 793.875,
+      "text": "I just don't wanna make it go through the decentralizing memory speech again. I think that's sweet, this week we'll have to. Okay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 798.7083333333334,
+      "end": 801.5,
+      "text": "This is now gonna go granular, of thinking through,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 802.7083333333334,
+      "end": 826.0833333333334,
+      "text": "Javi and I got to work together, talk about unusual surprises that happen when you enter, when you get closer to the artists, and you get to have this different kind of access, of how it opens up opportunities for you to have special interactions with artists, and how that enriches your life, beyond collecting art.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 826.0833333333334,
+      "end": 826.75,
+      "text": "Yeah.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 826.75,
+      "end": 828.3333333333334,
+      "text": "The community part,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 829.625,
+      "end": 838.5416666666666,
+      "text": "be open to it. You can actually join something that is cool, approachable, and makes your life better, in ways that you maybe not would have known.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 839.5833333333334,
+      "end": 840.9583333333334,
+      "text": "It's esoteric, that's esoteric, but.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 840.9583333333334,
+      "end": 928.0416666666666,
+      "text": "Yeah, yeah, I mean, I think what you're getting at is this idea that art is a language, and when we're connecting with artists, we're finding new ways to relate to each other. So the more connected we feel to the people making things, creating things in our cities, the more we have the opportunity to connect with each other. And I think that's another opportunity that Commissioner offers. When we first started this program, I really thought that people would be very focused on the object or the art itself. And now having done this for about eight, going on to nine years, I'm finding that people are happier to meet up with each other, and to learn things about themselves, and about ideas, topics, what have you, in Miami, in their city, and about each other than anything else. Things that are unexpected is people are dating within the community. People have had babies, we have gone to each other's barbecues, we travel together. Really, I didn't know that we would be engaging in a friendship project, but I think that Commissioner has brought together an unlikely group of humans that are values aligned, and are really more interested in people over transactions. And I think that's something that's really been inspiring to me. You know, when we first, again, started the project, I thought it would be one thing, but it's turned out to become much more about how we support each other.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 929.0833333333334,
+      "end": 929.2916666666666,
+      "text": "Check.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 929.2916666666666,
+      "end": 930.0833333333334,
+      "text": "Beautiful.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 930.0833333333334,
+      "end": 931.25,
+      "text": "No props.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 931.25,
+      "end": 934.0,
+      "text": "Mm-hmm. Not from the table. We're good, you don't have to talk anymore. Okay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 934.0,
+      "end": 935.0,
+      "text": "(Laughs)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 935.0,
+      "end": 937.4166666666666,
+      "text": "You don't have to talk anymore on that chair.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 937.4166666666666,
+      "end": 938.0,
+      "text": "Okay.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 938.0,
+      "end": 946.2916666666666,
+      "text": "I would like for you, in a laissez-faire way, in your cribs moment, just to follow her around.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 948.7083333333334,
+      "end": 955.5833333333334,
+      "text": "Talking about a couple of the pieces. But even if it's just like, this is Lonnie J, this is Lawrence Rapier, you know,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 955.5833333333334,
+      "end": 957.75,
+      "text": "I'm-- You should get both those pieces off and talk about them as well.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 957.75,
+      "end": 958.875,
+      "text": "Yeah, yeah, yeah, maybe just,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 960.0833333333334,
+      "end": 970.125,
+      "text": "because we're not gonna, this video is not gonna go down a rabbit hole. It's too short form to go into more deeper into the artist, but I think it's just like right here, right here, right here, just like talk around.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 971.4583333333334,
+      "end": 974.625,
+      "text": "Do you want me to get up and to share stuff?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 974.625,
+      "end": 977.6666666666666,
+      "text": "Should, because we do need to make our way to Reggie.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 977.6666666666666,
+      "end": 984.25,
+      "text": "Yeah, I'd say for these, since they're right there, it'd be good to pull it off from the table. This one right here is about the bottom.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 984.25,
+      "end": 992.7083333333334,
+      "text": "What about Luna's? She can't reach down there, it's kind of hard for you to reach from there, right? So just hold it. And then, this is Luna Guadalos.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 992.7083333333334,
+      "end": 993.5416666666666,
+      "text": "Alazondo.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 993.5416666666666,
+      "end": 994.3333333333334,
+      "text": "Alazondo.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 995.4166666666666,
+      "end": 1000.5,
+      "text": "I don't wanna be holding one piece, so it makes one more important than the other.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1000.5,
+      "end": 1002.75,
+      "text": "Let me put on a little mushroom and then she'll pick it up from there.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1004.0416666666666,
+      "end": 1004.125,
+      "text": "Yeah.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1006.125,
+      "end": 1006.2083333333334,
+      "text": "Great.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1008.375,
+      "end": 1009.1666666666666,
+      "text": "And then Lonnie.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1011.625,
+      "end": 1018.0833333333334,
+      "text": "If she just goes like this and points to Lonnie's, I kinda like how it's there in the tree. Can she do it? I'll just move the camera.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1018.0833333333334,
+      "end": 1026.625,
+      "text": "Okay, cool. But literally, I don't think this is like the best look for it because there's too much going on. It's not gonna show her work in the best light.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1029.0,
+      "end": 1030.4583333333333,
+      "text": "Maybe I should just even get up.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1032.7083333333333,
+      "end": 1034.5416666666667,
+      "text": "You wanna get, well, like, look, if she stands up to frame me.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1034.5416666666667,
+      "end": 1035.4166666666667,
+      "text": "Can I just get up?",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1035.4166666666667,
+      "end": 1040.7916666666667,
+      "text": "Get up, yeah, you're right. Oh, just watch the mic. That's all the thing I made me aware of. Wanna clip it to something?",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1042.2916666666667,
+      "end": 1042.5,
+      "text": "Good.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1043.6666666666667,
+      "end": 1046.9166666666667,
+      "text": "And now we're losing the light. I would stay set. Yeah, and I'll zoom in.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1049.375,
+      "end": 1054.1666666666667,
+      "text": "Would it fit in front of that table where the monster is? Just hold it, I think, that's good. Yeah.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1054.1666666666667,
+      "end": 1055.2083333333333,
+      "text": "Come.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1055.2083333333333,
+      "end": 1057.5416666666667,
+      "text": "And just rotate a little bit towards the window.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1058.6666666666667,
+      "end": 1061.75,
+      "text": "So what do you wanna highlight so I know what to zoom in on for you?",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1063.625,
+      "end": 1072.625,
+      "text": "That piece, that piece. I meant within that piece. Within the piece that she's holding? Yep. Is there anything particular you want me to focus on with that or just?",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1072.625,
+      "end": 1079.625,
+      "text": "I think so. I think there's like a few mirrors that you can see on the inside. I don't know if you can see them from here. Let's see.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1081.625,
+      "end": 1083.4583333333333,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1083.4583333333333,
+      "end": 1085.5416666666667,
+      "text": "We're zooming in real close to it.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1085.5416666666667,
+      "end": 1087.4583333333333,
+      "text": "Yep, just tilt it forward a little bit.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1088.4583333333333,
+      "end": 1091.4583333333333,
+      "text": "There you go. Down, a couple in Pokito. Yeah, we can definitely see it.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1093.2916666666667,
+      "end": 1094.2083333333333,
+      "text": "It's giving Rachel though.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1095.7916666666667,
+      "end": 1096.6666666666667,
+      "text": "Looks great, okay.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1097.6666666666667,
+      "end": 1098.1666666666667,
+      "text": "So you can talk.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1098.1666666666667,
+      "end": 1101.8333333333333,
+      "text": "Okay, I'm just, I'm gonna get really nerdy with y'all.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1101.8333333333333,
+      "end": 1102.9166666666667,
+      "text": "So.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1102.9166666666667,
+      "end": 1108.0833333333333,
+      "text": "One of the things about Loni Johnson, who was our season six, oh wait, I'm looking at you.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1109.5416666666667,
+      "end": 1111.7916666666667,
+      "text": "So you're looking at you or Amina? I'm Amina the whole time.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1111.7916666666667,
+      "end": 1114.625,
+      "text": "Yeah, just stay close to me is all.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1114.625,
+      "end": 1116.7083333333333,
+      "text": "I'm right here with you, I'm right here with you.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1116.7083333333333,
+      "end": 1117.4166666666667,
+      "text": "Hi.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1117.4166666666667,
+      "end": 1118.0416666666667,
+      "text": "Hi.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1118.0416666666667,
+      "end": 1120.25,
+      "text": "Hi you. Hi. Hi handsome. Hi.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1120.25,
+      "end": 1121.25,
+      "text": "I'm glad you're here.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1121.25,
+      "end": 1122.7916666666667,
+      "text": "Oh yeah, that's beautiful.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1122.7916666666667,
+      "end": 1123.25,
+      "text": "There we go.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1124.625,
+      "end": 1160.75,
+      "text": "Loni Johnson is based in Miami, and one of the things that I really appreciate about her work is how much she talks about taking up space and feeling seen. Hers is all about this practice of chandelang, which is almost like this term that she's coined. It's the jewelry she wears, it's hearing her come down the street, chandelang with her bracelets, it's the gold, it's the door knockers. In this piece, which she's created for us, these little pods, you get all of that jewelry. It feels precious because it's gold, but also it's everything that you know in the store. And also it has these mirrors, which I love.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1161.8333333333333,
+      "end": 1163.9166666666667,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1163.9166666666667,
+      "end": 1184.2083333333333,
+      "text": "It has these mirrors which I love so much because not only is it conceptually about being able to see yourself, but you get to see everything around you. I think her perspective on what Miami is and what blackness is in particular is important to remember.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1184.2083333333333,
+      "end": 1188.2083333333333,
+      "text": "Cool, and I'm just gonna zoom in super close, so just hold it right in front of your face.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1189.4583333333333,
+      "end": 1189.9583333333333,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1189.9583333333333,
+      "end": 1195.1666666666667,
+      "text": "Or a little bit below actually is good. And then, yeah, so the light goes right in, you see all the-- Yeah, and just do some",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1195.1666666666667,
+      "end": 1198.7083333333333,
+      "text": "small movements with it, that can be really nice. Changelang.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1200.0416666666667,
+      "end": 1201.9583333333333,
+      "text": "Changelang. Changelang.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1201.9583333333333,
+      "end": 1202.875,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1202.875,
+      "end": 1203.9166666666667,
+      "text": "God, that is-- Changelang.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1203.9166666666667,
+      "end": 1210.5416666666667,
+      "text": "And then just do some little like, ee, ee, ee, ee, a beat roll, okay, cool. Beautiful.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1211.5833333333333,
+      "end": 1215.4166666666667,
+      "text": "All right, we're done with her. Look at the pieces.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1216.7083333333333,
+      "end": 1218.375,
+      "text": "Should I put it back in?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1218.375,
+      "end": 1220.75,
+      "text": "Yeah, I don't know, I'll fix it. I'll fix it. I'll fix it. She needs to see.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1220.75,
+      "end": 1221.375,
+      "text": "Sit.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1224.5416666666667,
+      "end": 1225.625,
+      "text": "These are very long,",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1226.8333333333333,
+      "end": 1232.2083333333333,
+      "text": "we should just keep this for a beat roll but like, because it's good to have, but like, we're not gonna go deep into--",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1232.2083333333333,
+      "end": 1236.625,
+      "text": "I know. Each artist. I just don't know how to talk about these things concisely.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1236.625,
+      "end": 1238.9583333333333,
+      "text": "It's impossible, it's impossible. I get it.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1238.9583333333333,
+      "end": 1246.4166666666667,
+      "text": "So just go up. Okay, so-- You can use this like, like, artist highlights of people that you have featured at some point for just other--",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1246.4166666666667,
+      "end": 1250.2083333333333,
+      "text": "That's what I'm saying, like, we can use, we're gonna use a very small bit for this but you're gonna have this.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1251.2916666666667,
+      "end": 1255.875,
+      "text": "To use. We're gonna use, we're gonna have it, we're gonna extract them little nuggets but you're gonna have this period.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1255.875,
+      "end": 1257.5416666666667,
+      "text": "I don't wanna waste this makeup.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1258.7916666666667,
+      "end": 1258.7916666666667,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1258.7916666666667,
+      "end": 1259.0,
+      "text": "Hey!",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1262.0416666666667,
+      "end": 1262.7916666666667,
+      "text": "Lauren Shapiro.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1263.9583333333333,
+      "end": 1264.625,
+      "text": "Start over.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1267.4166666666667,
+      "end": 1293.5,
+      "text": "Lauren Shapiro has a beautiful language of ceramics but she's also known as the glaze queen. So for the pieces that she produced for \"Commissioner,\" each one of them is its own color, it has its own finish, and all of the forms here are kind of reminiscent of geological formations and organic material. So you have coral, you have gemstones, you have natural leaves. And for this one, I love the moonlight blue.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1295.3333333333333,
+      "end": 1297.7083333333333,
+      "text": "Cool. I'm gonna just hold it up, I'm gonna get some shots close.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1298.7083333333333,
+      "end": 1301.0,
+      "text": "And if you angle it a little bit towards the window, it catches more light.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1301.0,
+      "end": 1303.9166666666667,
+      "text": "Yeah! Yeah, and just like a slow rotation to the back of the room.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1306.0,
+      "end": 1306.0,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1306.0,
+      "end": 1307.75,
+      "text": "Nice. Cute, cute.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1308.875,
+      "end": 1309.0416666666667,
+      "text": "Great.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1309.0416666666667,
+      "end": 1309.875,
+      "text": "Cute.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1309.875,
+      "end": 1310.5,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1313.9583333333333,
+      "end": 1314.1666666666667,
+      "text": "Next.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1315.4583333333333,
+      "end": 1322.2083333333333,
+      "text": "And last, oh, we have two more. Mine is just too long. And then we're getting out of here. So good. Literally, and figuratively.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1324.9166666666667,
+      "end": 1325.0416666666667,
+      "text": "Okay.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1325.0416666666667,
+      "end": 1331.4166666666667,
+      "text": "Oh, should we do Diana the second year? Or can we do Luna? Diana, right? Because the box, did you want a box?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1331.4166666666667,
+      "end": 1337.25,
+      "text": "The box is gonna be a table moment. Okay, awesome. Because it feels weird for you to do it, like sitting there, like I wanted you to have a surface to put it on.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1337.25,
+      "end": 1337.8333333333333,
+      "text": "I got you.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1339.2916666666667,
+      "end": 1340.5,
+      "text": "You can show her work.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1341.875,
+      "end": 1345.5,
+      "text": "Wait, let's do Luna. Okay. All right, action.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1347.5,
+      "end": 1348.9583333333333,
+      "text": "Luna Palazzolo, don't believe.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1348.9583333333333,
+      "end": 1351.625,
+      "text": "Sorry, I bumped the camera. One more time. Go ahead.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1352.9583333333333,
+      "end": 1394.4583333333333,
+      "text": "Luna Palazzolo Dabuul is an incredible multidisciplinary artist, but also runs artist studios out of tunnel in Lille Havana. For us, she created a poem. And what we see is the poem deconstructed along 50 panels, each unique individual artworks, words on each of them that differ from the other until you get to the final piece where all the letters are jumbled. So I love the fact that we each have one piece of this broader writing are connected through the work in this deconstructed way, but also are very much like in line with the vernacular of Luna, which is cement, raw materials, writing, meaning.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1395.5,
+      "end": 1400.625,
+      "text": "So this is another precious one that I keep right next to my books because it is a poem after all.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1400.625,
+      "end": 1401.5,
+      "text": "Cool.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1402.9583333333333,
+      "end": 1404.0,
+      "text": "And just hold it up again.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1405.2083333333333,
+      "end": 1405.8333333333333,
+      "text": "Close up over here.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1408.0,
+      "end": 1411.5,
+      "text": "Cool. Just slight little anglings, slow movements, yeah.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1411.5,
+      "end": 1416.8333333333333,
+      "text": "Should I mention that she was just recently acquired by the Press Art My Animus, yeah?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1416.8333333333333,
+      "end": 1424.2083333333333,
+      "text": "Okay. Just like a couple of tilts away from the window, towards the window, just go that way, you know, back that way now.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1426.0416666666667,
+      "end": 1426.375,
+      "text": "Yeah.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1426.375,
+      "end": 1436.25,
+      "text": "You could say you're proud of her, be like PS. Yeah, cool. All right, go ahead. Wait, is there a little zoom out? You can add, not add the bit. PS or somehow your words, say.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1437.375,
+      "end": 1438.25,
+      "text": "I'm so proud of her.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1440.1666666666667,
+      "end": 1440.3333333333333,
+      "text": "Why?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1440.3333333333333,
+      "end": 1442.75,
+      "text": "Oh, shoot. I don't remember.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1442.75,
+      "end": 1443.7916666666667,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1443.7916666666667,
+      "end": 1446.9583333333333,
+      "text": "No, no, it's a sad.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1450.7083333333333,
+      "end": 1464.375,
+      "text": "You know, like for any artist, it's always a journey to try and figure out how to make your practice sustainable. And more recently, her work was a part by the Press Art Museum Miami. We're really proud of her, but also proud that we were first to collect the work.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1466.75,
+      "end": 1466.9583333333333,
+      "text": "Cool.",
+      "speaker": "Speaker 3",
+      "words": []
+    },
+    {
+      "start": 1470.5416666666667,
+      "end": 1471.9166666666667,
+      "text": "I don't know why I'm so shady.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1471.9166666666667,
+      "end": 1473.0,
+      "text": "(Laughing)",
+      "speaker": null,
+      "words": []
+    },
+    {
+      "start": 1473.0,
+      "end": 1473.25,
+      "text": "Why?",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1473.25,
+      "end": 1489.25,
+      "text": "Why? Because that is to have yourself as the trendsetter. That's what, I'm sorry, it's what you are. You say what's in, what's out, who's not, darling. And last but not least, oh no, we have that, we're getting into a lot of artists.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1489.25,
+      "end": 1492.5833333333333,
+      "text": "I think that those are more recent. Yeah, those are more recent.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1493.875,
+      "end": 1498.2916666666667,
+      "text": "I don't know if you wanna do the other wall in the other room, and like just to get like a different--",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1498.2916666666667,
+      "end": 1501.5,
+      "text": "Sure, well then Reggie definitely. Reggie. That's gonna be a part of the video.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1501.5,
+      "end": 1504.75,
+      "text": "And then there's the Janilla Sligler on the other wall, which is kind of badass.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1504.75,
+      "end": 1508.2916666666667,
+      "text": "We'll do those two in that, we gotta get in here in 10 minutes, so.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1510.5833333333333,
+      "end": 1511.0,
+      "text": "I'm ready.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1513.7916666666667,
+      "end": 1514.3333333333333,
+      "text": "Fuzzy.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1518.9166666666667,
+      "end": 1522.125,
+      "text": "Is this your name, it's an ASMR video? It's just ASMR.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1522.125,
+      "end": 1524.0833333333333,
+      "text": "Welcome to Commissioner.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1527.6666666666667,
+      "end": 1583.4166666666667,
+      "text": "Diana Isamio works a lot with textile, which I think is really an underappreciated form. We've been seeing a lot more of it recently, but I just truly admire her process. Here she took a photograph of a home that she saw on a hike in Peru, and used a seed to dye the fabric, creating this kind of like starburst from each house, adding ostrich feathers, and creating this space where it just can go in a frame, it can be suspended, but she's really thinking about how to create memory using these organic materials, and getting deep into the materiality of things. Like how is something made, and who is making it, what are we thinking about in terms of the seeds that come from the land, and how they can provide us color, texture, and really a more vibrant understanding of the world around us.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1583.4166666666667,
+      "end": 1587.0,
+      "text": "Say, Jesus Christ. Okay, I'll do a little close up moment.",
+      "speaker": "Speaker 4",
+      "words": []
+    },
+    {
+      "start": 1587.0,
+      "end": 1591.5833333333333,
+      "text": "I was hoping to have this suspended in the window by the time we came, but oh.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1591.5833333333333,
+      "end": 1592.875,
+      "text": "You didn't wanna frame it in the middle?",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1592.875,
+      "end": 1598.5,
+      "text": "I was gonna like suspend it from the ceiling in the corner about that little light. That's where she's gonna go.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1598.5,
+      "end": 1601.4166666666667,
+      "text": "Talk to Moi about the hardware. He'll know the hardware.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1601.4166666666667,
+      "end": 1602.125,
+      "text": "Okay, I will.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1602.125,
+      "end": 1607.9583333333333,
+      "text": "Because he wanted to be like a metal wiring system with weights probably to keep it under, and you don't want the breeze to like move it around.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1609.0416666666667,
+      "end": 1614.25,
+      "text": "I was thinking like maybe I'll just put in a little bracket in the back that is removable,",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1615.5,
+      "end": 1618.9583333333333,
+      "text": "so that it doesn't damage the work. But this girl, she wants to fly.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1618.9583333333333,
+      "end": 1620.4583333333333,
+      "text": "Yeah, she wants to like.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1620.4583333333333,
+      "end": 1622.7916666666667,
+      "text": "Yeah, yeah.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1622.7916666666667,
+      "end": 1623.6666666666667,
+      "text": "And she's peaceful.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1623.6666666666667,
+      "end": 1638.5,
+      "text": "She's peaceful. And the artist herself is young. She's probably one of the more emerging and newer artists to the collection. So this idea of kind of giving her her wings and really kind of centering her in the broader collection I think will be fun.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1638.5,
+      "end": 1639.125,
+      "text": "Yeah, I think so.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1639.125,
+      "end": 1666.9166666666667,
+      "text": "That's the thing that I've noticed about, I have things to say now. One thing that I've noticed about collecting is you end up creating this room full of friendship. The thought that an artist like Diana could be in conversation with Katya Saint-Hilaire, in conversation with Lonnie Johnson, I think this is also one of the joys of curating your home or living with art is all of a sudden there's this whole other dialogue that's happening from a spatial perspective.",
+      "speaker": "Speaker 1",
+      "words": []
+    },
+    {
+      "start": 1670.125,
+      "end": 1673.4583333333333,
+      "text": "Amazing. We'll just get B-roll of you with the table later on this.",
+      "speaker": "Speaker 2",
+      "words": []
+    },
+    {
+      "start": 1674.7083333333333,
+      "end": 1678.0,
+      "text": "Reggie. Okay. Reggie, the wall inside over there, then we're out.",
+      "speaker": "Speaker 2",
+      "words": []
+    }
+  ]
+}
