@@ -72,8 +72,17 @@ def _media_ref(
     media reference. We don't know the actual source duration here, so we
     declare a range from 0 to `src_out + headroom` — enough to cover the
     span we're using plus slack for trim handles in the NLE.
+
+    Accepts either an absolute path (`/Volumes/X/clip.mov`), a file:// URI,
+    or a bare filename (`clip.mov`). For bare filenames the URI is built
+    as `file:///<name>` so the FCPXML imports as an offline clip that the
+    editor can relink in Resolve.
     """
-    url = clip_path if clip_path.startswith("file://") else Path(clip_path).as_uri()
+    if clip_path.startswith("file://"):
+        url = clip_path
+    else:
+        p = Path(clip_path)
+        url = p.as_uri() if p.is_absolute() else f"file:///{p.name}"
     available = _range(0.0, max(src_out + headroom, headroom), rate)
     return otio.schema.ExternalReference(target_url=url, available_range=available)
 
@@ -209,7 +218,26 @@ def export_timeline(
     if adapter is None:
         raise ValueError(f"unsupported export format: {key}")
     otio.adapters.write_to_file(tl, str(out_path), adapter_name=adapter)
+    if key == "fcpxml":
+        _fix_fcpxml_has_audio(out_path, tl)
     return out_path
+
+
+def _fix_fcpxml_has_audio(out_path: Path, tl: otio.schema.Timeline) -> None:
+    """The otio-fcpx-xml-lite-adapter declares assets with hasAudio="0" even
+    when the timeline has audio clips referencing them. If the timeline
+    contains an audio track, patch the asset declaration so Resolve / FCP
+    treat the clip as audio-bearing on import."""
+    has_audio_track = any(
+        t.kind == otio.schema.TrackKind.Audio and len(list(t)) > 0
+        for t in tl.tracks
+    )
+    if not has_audio_track:
+        return
+    text = out_path.read_text()
+    if 'hasAudio="0"' in text:
+        text = text.replace('hasAudio="0"', 'hasAudio="1"')
+        out_path.write_text(text)
 
 
 def cuts_to_keeps(
