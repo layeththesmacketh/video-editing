@@ -18,6 +18,7 @@ Tracks built:
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Any
 
@@ -210,7 +211,11 @@ def export_timeline(
 ) -> Path:
     """Export an OTIO timeline via the named adapter.
 
-    `fmt` is one of: fcpxml, xml (Premiere), edl, otio. Inferred from extension if omitted.
+    `fmt` is one of: fcpxml, xml (Premiere/FCP7), edl, otio. Inferred from
+    extension if omitted.
+
+    Both the fcpxml-lite and fcp_xml adapters need light post-processing for
+    DaVinci Resolve import compatibility — applied automatically here.
     """
     out_path = Path(out_path)
     key = (fmt or out_path.suffix.lstrip(".")).lower()
@@ -219,25 +224,95 @@ def export_timeline(
         raise ValueError(f"unsupported export format: {key}")
     otio.adapters.write_to_file(tl, str(out_path), adapter_name=adapter)
     if key == "fcpxml":
-        _fix_fcpxml_has_audio(out_path, tl)
+        _fix_fcpxml_for_resolve(out_path, tl)
+    elif key == "xml":
+        _fix_fcp7_xml_for_resolve(out_path, tl)
     return out_path
 
 
-def _fix_fcpxml_has_audio(out_path: Path, tl: otio.schema.Timeline) -> None:
-    """The otio-fcpx-xml-lite-adapter declares assets with hasAudio="0" even
-    when the timeline has audio clips referencing them. If the timeline
-    contains an audio track, patch the asset declaration so Resolve / FCP
-    treat the clip as audio-bearing on import."""
+def _fix_fcpxml_for_resolve(out_path: Path, tl: otio.schema.Timeline) -> None:
+    """Patch the otio-fcpx-xml-lite-adapter's output for Resolve import:
+
+    1. Set hasAudio="1" on assets when the timeline has an audio track.
+    2. Downgrade the fcpxml version from 1.13 to 1.10 — Resolve 18.x rejects
+       versions newer than 1.10/1.11 ("Unable to find inherited value for key
+       'library'" is the symptom Resolve gives on a too-new file).
+    3. Wrap <project> inside <library><event>...</event></library>. Versions
+       >= 1.5 of the FCPXML spec require this container; the lite adapter
+       skips it, which is the OTHER source of the 'library' error.
+    """
+    text = out_path.read_text()
+
     has_audio_track = any(
         t.kind == otio.schema.TrackKind.Audio and len(list(t)) > 0
         for t in tl.tracks
     )
-    if not has_audio_track:
-        return
-    text = out_path.read_text()
-    if 'hasAudio="0"' in text:
+    if has_audio_track and 'hasAudio="0"' in text:
         text = text.replace('hasAudio="0"', 'hasAudio="1"')
-        out_path.write_text(text)
+
+    text = re.sub(
+        r'<fcpxml version="[\d.]+">',
+        '<fcpxml version="1.10">',
+        text,
+    )
+
+    if "<library>" not in text:
+        text = re.sub(
+            r'(<project\b[^>]*>)',
+            r'<library><event name="lattimore">\1',
+            text,
+            count=1,
+        )
+        text = re.sub(
+            r'(</project>)',
+            r'\1</event></library>',
+            text,
+            count=1,
+        )
+
+    out_path.write_text(text)
+
+
+def _fix_fcp7_xml_for_resolve(out_path: Path, tl: otio.schema.Timeline) -> None:
+    """Patch the otio fcp_xml adapter's output for Resolve import:
+
+    Audio clipitems need a <sourcetrack> element declaring mediatype=audio
+    so Resolve knows to read from the source clip's audio track. The OTIO
+    adapter doesn't emit this; Resolve will import the audio clipitems as
+    silent without it.
+    """
+    import xml.etree.ElementTree as ET
+
+    tree = ET.parse(out_path)
+    root = tree.getroot()
+
+    def _ensure_sourcetrack(clipitem: ET.Element, mediatype: str) -> None:
+        if clipitem.find("sourcetrack") is not None:
+            return
+        st = ET.SubElement(clipitem, "sourcetrack")
+        ET.SubElement(st, "mediatype").text = mediatype
+        ET.SubElement(st, "trackindex").text = "1"
+
+    for clipitem in root.findall(".//audio/track/clipitem"):
+        _ensure_sourcetrack(clipitem, "audio")
+    for clipitem in root.findall(".//video/track/clipitem"):
+        _ensure_sourcetrack(clipitem, "video")
+
+    for file_el in root.findall(".//file"):
+        media = file_el.find("media")
+        if media is None:
+            continue
+        audio = media.find("audio")
+        if audio is None:
+            continue
+        if audio.find("samplecharacteristics") is None:
+            sc = ET.SubElement(audio, "samplecharacteristics")
+            ET.SubElement(sc, "depth").text = "16"
+            ET.SubElement(sc, "samplerate").text = "48000"
+        if audio.find("channelcount") is None:
+            ET.SubElement(audio, "channelcount").text = "2"
+
+    tree.write(out_path, encoding="UTF-8", xml_declaration=True)
 
 
 def cuts_to_keeps(

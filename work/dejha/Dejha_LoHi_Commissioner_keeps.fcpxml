@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fcpxml>
-<fcpxml version="1.13">
+<fcpxml version="1.10">
   <resources>
     <format id="r1" name="FFVideoFormat_OTIO_24" frameDuration="1/24s" width="1920" height="1080"/>
     <asset id="r2" name="Dejha_LoHi_Commissioner_Interview.mov" start="0s" duration="1541/24s" hasAudio="1" hasVideo="1" audioRate="48k" audioChannels="2">
       <media-rep kind="original-media" src="file:///Dejha_LoHi_Commissioner_Interview.mov"/>
     </asset>
   </resources>
-  <project name="Dejha_LoHi_Commissioner_keeps">
+  <library><event name="lattimore"><project name="Dejha_LoHi_Commissioner_keeps">
     <sequence format="r1" duration="22117/24s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
       <spine>
         <gap name="Timeline Container" offset="0s" duration="22117/24s" start="0s">
@@ -240,5 +240,5 @@
         </gap>
       </spine>
     </sequence>
-  </project>
+  </project></event></library>
 </fcpxml>
