@@ -83,7 +83,13 @@ def _media_ref(
         url = clip_path
     else:
         p = Path(clip_path)
-        url = p.as_uri() if p.is_absolute() else f"file:///{p.name}"
+        if p.is_absolute():
+            url = p.as_uri()
+        else:
+            # Placeholder absolute path so Resolve has a directory hint to
+            # mark "offline at this location" — user clicks Relink and
+            # points at the real folder. Matches the FCPXML emitter.
+            url = f"file:///Volumes/RELINK/{p.name}"
     available = _range(0.0, max(src_out + headroom, headroom), rate)
     return otio.schema.ExternalReference(target_url=url, available_range=available)
 

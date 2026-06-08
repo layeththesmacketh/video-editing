@@ -195,14 +195,28 @@ def _build_cut_timeline(args: argparse.Namespace) -> int:
                           "error": "no keep ranges — cuts consume the entire clip"}))
         return 4
 
-    tl = build_keeps_timeline(
-        args.source_clip, duration, keeps,
-        name=args.name, rate=args.rate,
-    )
-
+    fmt = args.fmt or Path(args.out_path).suffix.lstrip(".").lower()
     out = Path(args.out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
-    export_timeline(tl, out, fmt=args.fmt)
+
+    if fmt == "fcpxml":
+        # Use our direct emitter — produces canonical Resolve-compatible FCPXML
+        # (proper library wrapper, single asset-clip per keep on the primary
+        # lane, asset uid/sig, real path preserved). Bypasses the OTIO
+        # adapter which has structural issues for this use case.
+        from .fcpxml import build_keeps_fcpxml
+        xml = build_keeps_fcpxml(
+            args.source_clip, duration, keeps,
+            project_name=args.name,
+            rate=int(args.rate),
+        )
+        out.write_text(xml)
+    else:
+        tl = build_keeps_timeline(
+            args.source_clip, duration, keeps,
+            name=args.name, rate=args.rate,
+        )
+        export_timeline(tl, out, fmt=fmt)
 
     total_kept = sum(k["end"] - k["start"] for k in keeps)
     print(json.dumps({

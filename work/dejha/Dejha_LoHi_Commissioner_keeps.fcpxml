@@ -1,244 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE fcpxml>
+
 <fcpxml version="1.10">
-  <resources>
-    <format id="r1" name="FFVideoFormat_OTIO_24" frameDuration="1/24s" width="1920" height="1080"/>
-    <asset id="r2" name="Dejha_LoHi_Commissioner_Interview.mov" start="0s" duration="1541/24s" hasAudio="1" hasVideo="1" audioRate="48k" audioChannels="2">
-      <media-rep kind="original-media" src="file:///Dejha_LoHi_Commissioner_Interview.mov"/>
-    </asset>
-  </resources>
-  <library><event name="lattimore"><project name="Dejha_LoHi_Commissioner_keeps">
-    <sequence format="r1" duration="22117/24s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
-      <spine>
-        <gap name="Timeline Container" offset="0s" duration="22117/24s" start="0s">
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="0s" duration="101/24s" start="0s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="101/24s" duration="125/24s" start="181/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="113/12s" duration="19/12s" start="129/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11s" duration="67/24s" start="1193/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="331/24s" duration="145/12s" start="773/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="207/8s" duration="19/12s" start="461/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="659/24s" duration="29/12s" start="1991/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="239/8s" duration="7/8s" start="1067/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="123/4s" duration="211/12s" start="2183/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="145/3s" duration="29/24s" start="2645/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1189/24s" duration="55/24s" start="791/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="311/6s" duration="7/6s" start="313/2s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="53s" duration="403/24s" start="1377/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1675/24s" duration="19/12s" start="2329/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="571/8s" duration="29/24s" start="4769/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="871/12s" duration="77/24s" start="616/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1819/24s" duration="77/4s" start="1761/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2281/24s" duration="121/8s" start="1525/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="661/6s" duration="61/24s" start="6535/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2705/24s" duration="7/6s" start="284s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="911/8s" duration="35/24s" start="2349/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="346/3s" duration="43/24s" start="2391/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="937/8s" duration="13/6s" start="7295/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2863/24s" duration="2s" start="7481/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2911/24s" duration="9/8s" start="943/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1469/12s" duration="85/24s" start="1943/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3023/24s" duration="43/12s" start="655/2s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3109/24s" duration="13/12s" start="8483/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1045/8s" duration="3/2s" start="1427/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1057/8s" duration="39/8s" start="8651/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="137s" duration="113/24s" start="1111/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3401/24s" duration="49/12s" start="4577/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3499/24s" duration="41/24s" start="1597/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="295/2s" duration="1349/12s" start="10685/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3119/12s" duration="17/8s" start="4473/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6289/24s" duration="13/8s" start="4501/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="791/3s" duration="37/24s" start="13547/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6365/24s" duration="41/24s" start="13639/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3203/12s" duration="95/12s" start="4933/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1649/6s" duration="7/6s" start="5033/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="276s" duration="187/6s" start="15175/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1843/6s" duration="27/8s" start="2667/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="7453/24s" duration="661/24s" start="17159/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="4057/12s" duration="29/12s" start="2233/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="681/2s" duration="35/24s" start="18079/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="8207/24s" duration="29/24s" start="18349/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2059/6s" duration="35/24s" start="6297/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2757/8s" duration="59/12s" start="4763/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="8389/24s" duration="31/24s" start="19235/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2105/6s" duration="11/8s" start="19879/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="8453/24s" duration="9/8s" start="1677/2s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1060/3s" duration="723/8s" start="10091/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="10649/24s" duration="13/12s" start="22415/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="10675/24s" duration="2/3s" start="7499/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="10691/24s" duration="5/2s" start="3785/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="10751/24s" duration="31/24s" start="5753/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1797/4s" duration="55/12s" start="11641/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2723/6s" duration="7/6s" start="23863/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="455s" duration="137/24s" start="24065/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11057/24s" duration="61/24s" start="8073/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1853/4s" duration="353/24s" start="24433/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11471/24s" duration="19/12s" start="4163/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11509/24s" duration="5/4s" start="25019/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11539/24s" duration="61/24s" start="8375/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1450/3s" duration="29/24s" start="2115/2s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="11629/24s" duration="47/24s" start="25481/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="973/2s" duration="131/12s" start="12871/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="5969/12s" duration="13/12s" start="13049/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="997/2s" duration="23/12s" start="13097/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6005/12s" duration="5/3s" start="6565/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6025/12s" duration="13/12s" start="8773/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3019/6s" duration="15/4s" start="8785/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6083/12s" duration="161/24s" start="8823/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="4109/8s" duration="811/12s" start="3350/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="13949/24s" duration="11/6s" start="7129/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="13993/24s" duration="127/24s" start="3596/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1765/3s" duration="9/8s" start="2421/2s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="14147/24s" duration="11/8s" start="9723/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3545/6s" duration="59/24s" start="3655/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="14239/24s" duration="13/4s" start="3664/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="14317/24s" duration="31/24s" start="14707/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="3587/6s" duration="9/2s" start="7393/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1807/3s" duration="7/6s" start="7501/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1207/2s" duration="49/6s" start="7535/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="1835/3s" duration="739/24s" start="15175/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="15419/24s" duration="13/12s" start="3893/3s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="15445/24s" duration="13/6s" start="10431/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="15497/24s" duration="29/24s" start="31385/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="7763/12s" duration="25/6s" start="7859/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="7813/12s" duration="11/8s" start="10513/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="15659/24s" duration="223/24s" start="7933/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2647/4s" duration="37/24s" start="32107/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="15919/24s" duration="35/24s" start="32171/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2659/4s" duration="85/24s" start="32291/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="16039/24s" duration="589/12s" start="16219/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="5739/8s" duration="37/24s" start="33635/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="8627/12s" duration="31/24s" start="33695/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="17285/24s" duration="9/4s" start="33739/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="17339/24s" duration="65/12s" start="33875/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="5823/8s" duration="23/12s" start="8545/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="17515/24s" duration="61/8s" start="34469/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="8849/12s" duration="159/8s" start="17363/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="18175/24s" duration="51/8s" start="17603/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="2291/3s" duration="73/8s" start="35741/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="18547/24s" duration="10/3s" start="36035/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6209/8s" duration="257/24s" start="6033/4s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="4721/6s" duration="491/8s" start="18265/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="20357/24s" duration="14/3s" start="38087/24s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6823/8s" duration="137/24s" start="9557/6s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="10303/12s" duration="19/24s" start="12811/8s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="6875/8s" duration="133/12s" start="19295/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="20891/24s" duration="199/4s" start="19445/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview" ref="r2" offset="22085/24s" duration="4/3s" start="20081/12s" lane="1"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="0s" duration="101/24s" start="0s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="101/24s" duration="125/24s" start="181/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="113/12s" duration="19/12s" start="129/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11s" duration="67/24s" start="1193/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="331/24s" duration="145/12s" start="773/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="207/8s" duration="19/12s" start="461/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="659/24s" duration="29/12s" start="1991/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="239/8s" duration="7/8s" start="1067/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="123/4s" duration="211/12s" start="2183/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="145/3s" duration="29/24s" start="2645/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1189/24s" duration="55/24s" start="791/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="311/6s" duration="7/6s" start="313/2s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="53s" duration="403/24s" start="1377/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1675/24s" duration="19/12s" start="2329/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="571/8s" duration="29/24s" start="4769/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="871/12s" duration="77/24s" start="616/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1819/24s" duration="77/4s" start="1761/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2281/24s" duration="121/8s" start="1525/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="661/6s" duration="61/24s" start="6535/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2705/24s" duration="7/6s" start="284s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="911/8s" duration="35/24s" start="2349/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="346/3s" duration="43/24s" start="2391/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="937/8s" duration="13/6s" start="7295/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2863/24s" duration="2s" start="7481/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2911/24s" duration="9/8s" start="943/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1469/12s" duration="85/24s" start="1943/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3023/24s" duration="43/12s" start="655/2s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3109/24s" duration="13/12s" start="8483/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1045/8s" duration="3/2s" start="1427/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1057/8s" duration="39/8s" start="8651/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="137s" duration="113/24s" start="1111/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3401/24s" duration="49/12s" start="4577/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3499/24s" duration="41/24s" start="1597/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="295/2s" duration="1349/12s" start="10685/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3119/12s" duration="17/8s" start="4473/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6289/24s" duration="13/8s" start="4501/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="791/3s" duration="37/24s" start="13547/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6365/24s" duration="41/24s" start="13639/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3203/12s" duration="95/12s" start="4933/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1649/6s" duration="7/6s" start="5033/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="276s" duration="187/6s" start="15175/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1843/6s" duration="27/8s" start="2667/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="7453/24s" duration="661/24s" start="17159/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="4057/12s" duration="29/12s" start="2233/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="681/2s" duration="35/24s" start="18079/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="8207/24s" duration="29/24s" start="18349/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2059/6s" duration="35/24s" start="6297/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2757/8s" duration="59/12s" start="4763/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="8389/24s" duration="31/24s" start="19235/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2105/6s" duration="11/8s" start="19879/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="8453/24s" duration="9/8s" start="1677/2s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1060/3s" duration="723/8s" start="10091/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="10649/24s" duration="13/12s" start="22415/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="10675/24s" duration="2/3s" start="7499/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="10691/24s" duration="5/2s" start="3785/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="10751/24s" duration="31/24s" start="5753/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1797/4s" duration="55/12s" start="11641/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2723/6s" duration="7/6s" start="23863/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="455s" duration="137/24s" start="24065/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11057/24s" duration="61/24s" start="8073/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1853/4s" duration="353/24s" start="24433/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11471/24s" duration="19/12s" start="4163/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11509/24s" duration="5/4s" start="25019/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11539/24s" duration="61/24s" start="8375/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1450/3s" duration="29/24s" start="2115/2s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="11629/24s" duration="47/24s" start="25481/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="973/2s" duration="131/12s" start="12871/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="5969/12s" duration="13/12s" start="13049/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="997/2s" duration="23/12s" start="13097/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6005/12s" duration="5/3s" start="6565/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6025/12s" duration="13/12s" start="8773/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3019/6s" duration="15/4s" start="8785/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6083/12s" duration="161/24s" start="8823/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="4109/8s" duration="811/12s" start="3350/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="13949/24s" duration="11/6s" start="7129/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="13993/24s" duration="127/24s" start="3596/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1765/3s" duration="9/8s" start="2421/2s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="14147/24s" duration="11/8s" start="9723/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3545/6s" duration="59/24s" start="3655/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="14239/24s" duration="13/4s" start="3664/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="14317/24s" duration="31/24s" start="14707/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="3587/6s" duration="9/2s" start="7393/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1807/3s" duration="7/6s" start="7501/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1207/2s" duration="49/6s" start="7535/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="1835/3s" duration="739/24s" start="15175/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="15419/24s" duration="13/12s" start="3893/3s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="15445/24s" duration="13/6s" start="10431/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="15497/24s" duration="29/24s" start="31385/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="7763/12s" duration="25/6s" start="7859/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="7813/12s" duration="11/8s" start="10513/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="15659/24s" duration="223/24s" start="7933/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2647/4s" duration="37/24s" start="32107/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="15919/24s" duration="35/24s" start="32171/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2659/4s" duration="85/24s" start="32291/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="16039/24s" duration="589/12s" start="16219/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="5739/8s" duration="37/24s" start="33635/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="8627/12s" duration="31/24s" start="33695/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="17285/24s" duration="9/4s" start="33739/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="17339/24s" duration="65/12s" start="33875/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="5823/8s" duration="23/12s" start="8545/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="17515/24s" duration="61/8s" start="34469/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="8849/12s" duration="159/8s" start="17363/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="18175/24s" duration="51/8s" start="17603/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="2291/3s" duration="73/8s" start="35741/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="18547/24s" duration="10/3s" start="36035/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6209/8s" duration="257/24s" start="6033/4s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="4721/6s" duration="491/8s" start="18265/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="20357/24s" duration="14/3s" start="38087/24s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6823/8s" duration="137/24s" start="9557/6s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="10303/12s" duration="19/24s" start="12811/8s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="6875/8s" duration="133/12s" start="19295/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="20891/24s" duration="199/4s" start="19445/12s" lane="-1" audioRole="dialogue"/>
-          <asset-clip name="Dejha_LoHi_Commissioner_Interview_audio" ref="r2" offset="22085/24s" duration="4/3s" start="20081/12s" lane="-1" audioRole="dialogue"/>
-        </gap>
-      </spine>
-    </sequence>
-  </project></event></library>
+    <resources>
+        <format id="r1" name="FFVideoFormat1080p24" frameDuration="1/24s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r2" name="Dejha_LoHi_Commissioner_Interview" uid="9D7701DC6270EBCB16C1AC2774677879" start="0s" duration="40272/24s" hasVideo="1" hasAudio="1" videoSources="1" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" sig="9D7701DC6270EBCB16C1AC2774677879" src="file:///Volumes/RELINK/Dejha_LoHi_Commissioner_Interview.mov"/>
+        </asset>
+    </resources>
+    <library>
+        <event name="lattimore" uid="7D255E15-738C-46D7-882E-93D63E1C6D10">
+            <project name="Dejha_LoHi_Commissioner_keeps" uid="6B49850F-21EF-443D-9BAC-D25769151AF8">
+                <sequence format="r1" duration="22117/24s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                    <asset-clip ref="r2" offset="0/24s" name="Dejha_LoHi_Commissioner_Interview" duration="101/24s" start="0/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="101/24s" name="Dejha_LoHi_Commissioner_Interview" duration="125/24s" start="181/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="226/24s" name="Dejha_LoHi_Commissioner_Interview" duration="38/24s" start="387/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="264/24s" name="Dejha_LoHi_Commissioner_Interview" duration="67/24s" start="1193/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="331/24s" name="Dejha_LoHi_Commissioner_Interview" duration="290/24s" start="1546/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="621/24s" name="Dejha_LoHi_Commissioner_Interview" duration="38/24s" start="1844/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="659/24s" name="Dejha_LoHi_Commissioner_Interview" duration="58/24s" start="1991/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="717/24s" name="Dejha_LoHi_Commissioner_Interview" duration="21/24s" start="2134/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="738/24s" name="Dejha_LoHi_Commissioner_Interview" duration="422/24s" start="2183/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1160/24s" name="Dejha_LoHi_Commissioner_Interview" duration="29/24s" start="2645/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1189/24s" name="Dejha_LoHi_Commissioner_Interview" duration="55/24s" start="3164/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1244/24s" name="Dejha_LoHi_Commissioner_Interview" duration="28/24s" start="3756/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1272/24s" name="Dejha_LoHi_Commissioner_Interview" duration="403/24s" start="4131/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1675/24s" name="Dejha_LoHi_Commissioner_Interview" duration="38/24s" start="4658/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1713/24s" name="Dejha_LoHi_Commissioner_Interview" duration="29/24s" start="4769/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1742/24s" name="Dejha_LoHi_Commissioner_Interview" duration="77/24s" start="4928/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="1819/24s" name="Dejha_LoHi_Commissioner_Interview" duration="462/24s" start="5283/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2281/24s" name="Dejha_LoHi_Commissioner_Interview" duration="363/24s" start="6100/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2644/24s" name="Dejha_LoHi_Commissioner_Interview" duration="61/24s" start="6535/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2705/24s" name="Dejha_LoHi_Commissioner_Interview" duration="28/24s" start="6816/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2733/24s" name="Dejha_LoHi_Commissioner_Interview" duration="35/24s" start="7047/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2768/24s" name="Dejha_LoHi_Commissioner_Interview" duration="43/24s" start="7173/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2811/24s" name="Dejha_LoHi_Commissioner_Interview" duration="52/24s" start="7295/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2863/24s" name="Dejha_LoHi_Commissioner_Interview" duration="48/24s" start="7481/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2911/24s" name="Dejha_LoHi_Commissioner_Interview" duration="27/24s" start="7544/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="2938/24s" name="Dejha_LoHi_Commissioner_Interview" duration="85/24s" start="7772/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3023/24s" name="Dejha_LoHi_Commissioner_Interview" duration="86/24s" start="7860/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3109/24s" name="Dejha_LoHi_Commissioner_Interview" duration="26/24s" start="8483/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3135/24s" name="Dejha_LoHi_Commissioner_Interview" duration="36/24s" start="8562/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3171/24s" name="Dejha_LoHi_Commissioner_Interview" duration="117/24s" start="8651/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3288/24s" name="Dejha_LoHi_Commissioner_Interview" duration="113/24s" start="8888/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3401/24s" name="Dejha_LoHi_Commissioner_Interview" duration="98/24s" start="9154/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3499/24s" name="Dejha_LoHi_Commissioner_Interview" duration="41/24s" start="9582/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="3540/24s" name="Dejha_LoHi_Commissioner_Interview" duration="2698/24s" start="10685/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6238/24s" name="Dejha_LoHi_Commissioner_Interview" duration="51/24s" start="13419/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6289/24s" name="Dejha_LoHi_Commissioner_Interview" duration="39/24s" start="13503/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6328/24s" name="Dejha_LoHi_Commissioner_Interview" duration="37/24s" start="13547/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6365/24s" name="Dejha_LoHi_Commissioner_Interview" duration="41/24s" start="13639/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6406/24s" name="Dejha_LoHi_Commissioner_Interview" duration="190/24s" start="14799/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6596/24s" name="Dejha_LoHi_Commissioner_Interview" duration="28/24s" start="15099/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="6624/24s" name="Dejha_LoHi_Commissioner_Interview" duration="748/24s" start="15175/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="7372/24s" name="Dejha_LoHi_Commissioner_Interview" duration="81/24s" start="16002/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="7453/24s" name="Dejha_LoHi_Commissioner_Interview" duration="661/24s" start="17159/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8114/24s" name="Dejha_LoHi_Commissioner_Interview" duration="58/24s" start="17864/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8172/24s" name="Dejha_LoHi_Commissioner_Interview" duration="35/24s" start="18079/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8207/24s" name="Dejha_LoHi_Commissioner_Interview" duration="29/24s" start="18349/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8236/24s" name="Dejha_LoHi_Commissioner_Interview" duration="35/24s" start="18891/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8271/24s" name="Dejha_LoHi_Commissioner_Interview" duration="118/24s" start="19052/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8389/24s" name="Dejha_LoHi_Commissioner_Interview" duration="31/24s" start="19235/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8420/24s" name="Dejha_LoHi_Commissioner_Interview" duration="33/24s" start="19879/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8453/24s" name="Dejha_LoHi_Commissioner_Interview" duration="27/24s" start="20124/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="8480/24s" name="Dejha_LoHi_Commissioner_Interview" duration="2169/24s" start="20182/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10649/24s" name="Dejha_LoHi_Commissioner_Interview" duration="26/24s" start="22415/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10675/24s" name="Dejha_LoHi_Commissioner_Interview" duration="16/24s" start="22497/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10691/24s" name="Dejha_LoHi_Commissioner_Interview" duration="60/24s" start="22710/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10751/24s" name="Dejha_LoHi_Commissioner_Interview" duration="31/24s" start="23012/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10782/24s" name="Dejha_LoHi_Commissioner_Interview" duration="110/24s" start="23282/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10892/24s" name="Dejha_LoHi_Commissioner_Interview" duration="28/24s" start="23863/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="10920/24s" name="Dejha_LoHi_Commissioner_Interview" duration="137/24s" start="24065/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11057/24s" name="Dejha_LoHi_Commissioner_Interview" duration="61/24s" start="24219/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11118/24s" name="Dejha_LoHi_Commissioner_Interview" duration="353/24s" start="24433/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11471/24s" name="Dejha_LoHi_Commissioner_Interview" duration="38/24s" start="24978/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11509/24s" name="Dejha_LoHi_Commissioner_Interview" duration="30/24s" start="25019/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11539/24s" name="Dejha_LoHi_Commissioner_Interview" duration="61/24s" start="25125/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11600/24s" name="Dejha_LoHi_Commissioner_Interview" duration="29/24s" start="25380/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11629/24s" name="Dejha_LoHi_Commissioner_Interview" duration="47/24s" start="25481/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11676/24s" name="Dejha_LoHi_Commissioner_Interview" duration="262/24s" start="25742/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11938/24s" name="Dejha_LoHi_Commissioner_Interview" duration="26/24s" start="26098/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="11964/24s" name="Dejha_LoHi_Commissioner_Interview" duration="46/24s" start="26194/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="12010/24s" name="Dejha_LoHi_Commissioner_Interview" duration="40/24s" start="26260/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="12050/24s" name="Dejha_LoHi_Commissioner_Interview" duration="26/24s" start="26319/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="12076/24s" name="Dejha_LoHi_Commissioner_Interview" duration="90/24s" start="26355/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="12166/24s" name="Dejha_LoHi_Commissioner_Interview" duration="161/24s" start="26469/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="12327/24s" name="Dejha_LoHi_Commissioner_Interview" duration="1622/24s" start="26800/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="13949/24s" name="Dejha_LoHi_Commissioner_Interview" duration="44/24s" start="28516/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="13993/24s" name="Dejha_LoHi_Commissioner_Interview" duration="127/24s" start="28768/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14120/24s" name="Dejha_LoHi_Commissioner_Interview" duration="27/24s" start="29052/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14147/24s" name="Dejha_LoHi_Commissioner_Interview" duration="33/24s" start="29169/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14180/24s" name="Dejha_LoHi_Commissioner_Interview" duration="59/24s" start="29240/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14239/24s" name="Dejha_LoHi_Commissioner_Interview" duration="78/24s" start="29312/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14317/24s" name="Dejha_LoHi_Commissioner_Interview" duration="31/24s" start="29414/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14348/24s" name="Dejha_LoHi_Commissioner_Interview" duration="108/24s" start="29572/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14456/24s" name="Dejha_LoHi_Commissioner_Interview" duration="28/24s" start="30004/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14484/24s" name="Dejha_LoHi_Commissioner_Interview" duration="196/24s" start="30140/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="14680/24s" name="Dejha_LoHi_Commissioner_Interview" duration="739/24s" start="30350/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15419/24s" name="Dejha_LoHi_Commissioner_Interview" duration="26/24s" start="31144/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15445/24s" name="Dejha_LoHi_Commissioner_Interview" duration="52/24s" start="31293/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15497/24s" name="Dejha_LoHi_Commissioner_Interview" duration="29/24s" start="31385/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15526/24s" name="Dejha_LoHi_Commissioner_Interview" duration="100/24s" start="31436/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15626/24s" name="Dejha_LoHi_Commissioner_Interview" duration="33/24s" start="31539/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15659/24s" name="Dejha_LoHi_Commissioner_Interview" duration="223/24s" start="31732/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15882/24s" name="Dejha_LoHi_Commissioner_Interview" duration="37/24s" start="32107/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15919/24s" name="Dejha_LoHi_Commissioner_Interview" duration="35/24s" start="32171/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="15954/24s" name="Dejha_LoHi_Commissioner_Interview" duration="85/24s" start="32291/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="16039/24s" name="Dejha_LoHi_Commissioner_Interview" duration="1178/24s" start="32438/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17217/24s" name="Dejha_LoHi_Commissioner_Interview" duration="37/24s" start="33635/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17254/24s" name="Dejha_LoHi_Commissioner_Interview" duration="31/24s" start="33695/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17285/24s" name="Dejha_LoHi_Commissioner_Interview" duration="54/24s" start="33739/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17339/24s" name="Dejha_LoHi_Commissioner_Interview" duration="130/24s" start="33875/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17469/24s" name="Dejha_LoHi_Commissioner_Interview" duration="46/24s" start="34180/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17515/24s" name="Dejha_LoHi_Commissioner_Interview" duration="183/24s" start="34469/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="17698/24s" name="Dejha_LoHi_Commissioner_Interview" duration="477/24s" start="34726/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="18175/24s" name="Dejha_LoHi_Commissioner_Interview" duration="153/24s" start="35206/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="18328/24s" name="Dejha_LoHi_Commissioner_Interview" duration="219/24s" start="35741/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="18547/24s" name="Dejha_LoHi_Commissioner_Interview" duration="80/24s" start="36035/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="18627/24s" name="Dejha_LoHi_Commissioner_Interview" duration="257/24s" start="36198/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="18884/24s" name="Dejha_LoHi_Commissioner_Interview" duration="1473/24s" start="36530/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="20357/24s" name="Dejha_LoHi_Commissioner_Interview" duration="112/24s" start="38087/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="20469/24s" name="Dejha_LoHi_Commissioner_Interview" duration="137/24s" start="38228/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="20606/24s" name="Dejha_LoHi_Commissioner_Interview" duration="19/24s" start="38433/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="20625/24s" name="Dejha_LoHi_Commissioner_Interview" duration="266/24s" start="38590/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="20891/24s" name="Dejha_LoHi_Commissioner_Interview" duration="1194/24s" start="38890/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    <asset-clip ref="r2" offset="22085/24s" name="Dejha_LoHi_Commissioner_Interview" duration="32/24s" start="40162/24s" tcFormat="NDF" audioRole="dialogue"/>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
 </fcpxml>
